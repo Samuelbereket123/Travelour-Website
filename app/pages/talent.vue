@@ -1,14 +1,14 @@
 <template>
   <div class="page-talent">
     <!-- Talent Hero -->
-    <section class="talent-hero section-spacing">
+    <section class="talent-hero section-spacing hero-sail">
       <div class="shell">
         <p class="eyebrow">
           TRAVELOUR TALENT & MODERATED JOBS
         </p>
         <h1 class="talent-hero-title font-display">
           A real Dubai labour market.<br />
-          <span class="gold-text-gradient">No ghost jobs. No recruiter cuts.</span>
+          <span class="talent-hero-title-accent">No ghost jobs. No recruiter cuts.</span>
         </h1>
         <p class="talent-hero-subtitle font-sans">
           Whether you have just landed in Dubai or have been building your career here for years: create your verified profile, pay one flat annual fee ($29), and connect directly with licensed employers.
@@ -22,7 +22,7 @@
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
           </NuxtLink>
-          <span class="font-mono text-gold text-xs">$29.00 / 12-MONTH LISTING</span>
+          <span class="font-mono text-on-sail text-xs font-semibold">$29.00 / 12-MONTH LISTING</span>
         </div>
       </div>
     </section>
@@ -92,23 +92,29 @@ useHead({
 .talent-hero {
   padding-top: 4rem;
   padding-bottom: 4rem;
-  border-bottom: 1px solid var(--color-line);
+  border-bottom: 1px solid rgba(5, 57, 73, 0.2);
 }
 
 .talent-hero-title {
   font-size: clamp(2.5rem, 5.5vw, 4.4rem);
   font-weight: 300;
   line-height: 1.1;
-  color: var(--color-foreground);
+  color: var(--color-on-sail);
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
 }
 
+.talent-hero-title-accent {
+  font-weight: 700;
+  color: var(--color-on-sail);
+}
+
 .talent-hero-subtitle {
   font-size: 1.15rem;
   line-height: 1.65;
-  color: var(--color-muted-foreground);
+  color: var(--color-on-sail);
+  opacity: 0.92;
   max-width: 48rem;
   margin-bottom: 2.5rem;
 }
@@ -117,11 +123,6 @@ useHead({
   display: flex;
   align-items: center;
   gap: 1.5rem;
-}
-
-.text-gold {
-  color: var(--color-primary);
-  letter-spacing: 0.15em;
 }
 
 .talent-grid {

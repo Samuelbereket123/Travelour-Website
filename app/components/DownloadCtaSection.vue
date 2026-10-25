@@ -1,6 +1,6 @@
 <template>
-  <section id="download-cta" class="download-cta-section">
-    <!-- Background Image with Ambient Glow and Fades -->
+  <section id="download-cta" class="download-cta-section bg-sail">
+    <!-- Background Image with Ambient Sail Overlay -->
     <div class="cta-bg-wrapper">
       <img
         src="/images/travelour_app_showcase.jpg"
@@ -8,9 +8,7 @@
         class="cta-bg-image"
         loading="lazy"
       />
-      <div class="cta-top-fade" aria-hidden="true"></div>
-      <div class="cta-bottom-fade" aria-hidden="true"></div>
-      <div class="cta-dark-wash" aria-hidden="true"></div>
+      <div class="cta-sail-tint" aria-hidden="true"></div>
     </div>
 
     <!-- Centered Content -->
@@ -21,7 +19,7 @@
 
       <h2 class="cta-title font-display">
         One app. Zero guesswork.<br />
-        <span class="gold-text-gradient">Welcome to Dubai.</span>
+        <span class="cta-title-bold">Welcome to Dubai.</span>
       </h2>
 
       <p class="cta-subtitle font-sans">
@@ -29,16 +27,16 @@
       </p>
 
       <div class="cta-buttons-row">
-        <NuxtLink to="/download" class="glass-pill cta-glass-btn">
-          <span>Download the App</span>
+        <NuxtLink to="/download" class="btn btn-primary cta-primary-btn">
+          <span>Get the App</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
         </NuxtLink>
 
-        <NuxtLink to="/business" class="btn btn-primary cta-primary-btn">
-          <span>List on Travelour</span>
+        <NuxtLink to="/business" class="btn-sail-secondary cta-secondary-btn">
+          <span>Join Directory</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
@@ -80,7 +78,8 @@
   text-align: center;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background-color: #000;
+  background: var(--gradient-sail);
+  color: var(--color-on-sail);
 }
 
 /* Background Media & Overlays */
@@ -88,6 +87,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  pointer-events: none;
 }
 
 .cta-bg-image {
@@ -95,33 +95,14 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.35;
-  filter: blur(1px);
+  opacity: 0.08;
+  mix-blend-mode: multiply;
 }
 
-.cta-top-fade {
-  position: absolute;
-  inset-x: 0;
-  top: 0;
-  height: 12rem;
-  background: linear-gradient(180deg, #000000 0%, transparent 100%);
-  pointer-events: none;
-}
-
-.cta-bottom-fade {
-  position: absolute;
-  inset-x: 0;
-  bottom: 0;
-  height: 12rem;
-  background: linear-gradient(0deg, #000000 0%, transparent 100%);
-  pointer-events: none;
-}
-
-.cta-dark-wash {
+.cta-sail-tint {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  pointer-events: none;
+  background: linear-gradient(180deg, rgba(143, 233, 255, 0.25) 0%, rgba(18, 88, 110, 0.45) 100%);
 }
 
 /* Shell content */
@@ -135,22 +116,34 @@
 
 .cta-eyebrow {
   margin-bottom: 1.25rem;
+  color: var(--color-on-sail);
+  font-weight: 700;
+}
+
+.cta-eyebrow::before {
+  background-color: var(--color-on-sail);
 }
 
 .cta-title {
   font-size: clamp(2.5rem, 6vw, 4.8rem);
   font-weight: 300;
   line-height: 1.05;
-  color: var(--color-foreground);
+  color: var(--color-on-sail);
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
   max-width: 52rem;
 }
 
+.cta-title-bold {
+  font-weight: 700;
+  color: var(--color-on-sail);
+}
+
 .cta-subtitle {
   font-size: clamp(1rem, 1.8vw, 1.2rem);
   line-height: 1.6;
-  color: var(--color-muted-foreground);
+  color: var(--color-on-sail);
+  opacity: 0.92;
   max-width: 42rem;
   margin-bottom: 2.75rem;
 }
@@ -164,24 +157,37 @@
   margin-bottom: 3rem;
 }
 
-.cta-glass-btn {
-  padding: 1rem 2.25rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.cta-glass-btn:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.35);
-  transform: translateY(-2px);
-}
-
 .cta-primary-btn {
   padding: 1rem 2.25rem;
   font-size: 0.82rem;
+  background-color: var(--color-butter);
+  color: var(--color-ink);
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(5, 57, 73, 0.25);
+}
+
+.cta-primary-btn:hover {
+  background-color: var(--color-butter-hover);
+  color: var(--color-ink);
+  box-shadow: 0 6px 24px rgba(5, 57, 73, 0.35);
+  transform: translateY(-2px);
+}
+
+.cta-secondary-btn {
+  padding: 1rem 2.25rem;
+  font-size: 0.82rem;
+  background: rgba(255, 255, 255, 0.35);
+  color: var(--color-on-sail);
+  border: 1.5px solid var(--color-on-sail);
+  box-shadow: 0 2px 10px rgba(5, 57, 73, 0.1);
+}
+
+.cta-secondary-btn:hover {
+  background: var(--color-on-sail);
+  color: var(--color-sail-light);
+  border-color: var(--color-on-sail);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(5, 57, 73, 0.25);
 }
 
 /* Platform chips */
@@ -198,10 +204,13 @@
   gap: 0.5rem;
   padding: 0.45rem 1rem;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  color: var(--color-muted-foreground);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(5, 57, 73, 0.2);
+  color: var(--color-on-sail);
   font-size: 0.72rem;
   letter-spacing: 0.1em;
+  font-weight: 600;
 }
 </style>

@@ -78,8 +78,8 @@
 
 <style scoped>
 .site-footer {
-  background-color: #030406;
-  border-top: 1px solid var(--color-line);
+  background-color: #042028;
+  border-top: 1px solid rgba(143, 233, 255, 0.16);
   padding-top: 5rem;
   padding-bottom: 3rem;
 }

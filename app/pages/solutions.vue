@@ -1,14 +1,14 @@
 <template>
   <div class="page-solutions">
     <!-- Solutions Hero -->
-    <section class="solutions-hero section-spacing">
+    <section class="solutions-hero section-spacing hero-sail">
       <div class="shell">
         <p class="eyebrow">
           THE SIX VERTICALS & THE DUBAI GUIDE
         </p>
         <h1 class="solutions-title font-display">
           Six verified directories.<br />
-          <span class="gold-text-gradient">One Dubai gateway.</span>
+          <span class="solutions-title-accent">One Dubai gateway.</span>
         </h1>
         <p class="solutions-subtitle font-sans">
           Each vertical in Travelour is engineered specifically for that industry. Instead of one-size-fits-all generic listings, every place carries vertical-specific details, human editorial verdicts, and direct WhatsApp contact.
@@ -43,9 +43,6 @@
           >
             <div class="vert-img-side">
               <img :src="vert.image" :alt="vert.title" class="vert-img" loading="lazy" />
-              <div class="vert-img-overlay">
-                <span class="verified-badge">KYC Verified Directory</span>
-              </div>
             </div>
 
             <div class="vert-text-side">
@@ -223,23 +220,29 @@ const filteredVerticals = computed(() => {
 .solutions-hero {
   padding-top: 4rem;
   padding-bottom: 3.5rem;
-  border-bottom: 1px solid var(--color-line);
+  border-bottom: 1px solid rgba(5, 57, 73, 0.2);
 }
 
 .solutions-title {
   font-size: clamp(2.5rem, 5.5vw, 4.4rem);
   font-weight: 300;
   line-height: 1.1;
-  color: var(--color-foreground);
+  color: var(--color-on-sail);
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
 }
 
+.solutions-title-accent {
+  font-weight: 700;
+  color: var(--color-on-sail);
+}
+
 .solutions-subtitle {
   font-size: 1.15rem;
   line-height: 1.65;
-  color: var(--color-muted-foreground);
+  color: var(--color-on-sail);
+  opacity: 0.92;
   max-width: 48rem;
   margin-bottom: 2.5rem;
 }
@@ -256,9 +259,9 @@ const filteredVerticals = computed(() => {
   gap: 0.5rem;
   padding: 0.65rem 1.25rem;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--color-muted-foreground);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(5, 57, 73, 0.2);
+  color: var(--color-on-sail);
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -266,26 +269,28 @@ const filteredVerticals = computed(() => {
 }
 
 .filter-pill:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--color-foreground);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--color-on-sail);
+  border-color: var(--color-on-sail);
 }
 
 .filter-pill.active {
-  background: var(--color-primary);
-  color: var(--color-primary-foreground);
-  font-weight: 600;
-  box-shadow: 0 0 20px rgba(245, 192, 66, 0.3);
+  background: var(--color-butter);
+  color: var(--color-ink);
+  font-weight: 700;
+  border-color: var(--color-butter-hover);
+  box-shadow: 0 4px 16px rgba(5, 57, 73, 0.2);
 }
 
 .pill-code {
   font-size: 0.65rem;
-  opacity: 0.75;
+  opacity: 0.85;
   letter-spacing: 0.15em;
 }
 
 .filter-pill.active .pill-code {
-  opacity: 0.95;
-  font-weight: 700;
+  opacity: 1;
+  font-weight: 800;
 }
 
 /* Detail stack */
@@ -333,11 +338,7 @@ const filteredVerticals = computed(() => {
   object-fit: cover;
 }
 
-.vert-img-overlay {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-}
+
 
 .vert-text-side {
   padding: 2.5rem 2rem;

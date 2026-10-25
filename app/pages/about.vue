@@ -1,13 +1,13 @@
 <template>
   <div class="page-about">
-    <section class="about-hero section-spacing">
+    <section class="about-hero section-spacing hero-sail">
       <div class="shell">
         <p class="eyebrow">
           OUR MISSION & CHARTER
         </p>
         <h1 class="about-title font-display">
           Building the trusted gateway<br />
-          <span class="gold-text-gradient">to the city of the future.</span>
+          <span class="about-title-accent">to the city of the future.</span>
         </h1>
         <p class="about-subtitle font-sans">
           Dubai receives millions of tourists, business leaders, medical visitors, students, and new residents every year. Yet their arrival experience is fragmented across dozens of unverified apps, cold search engines, and noisy WhatsApp chats. Travelour was built to fix that.
@@ -72,23 +72,29 @@ useHead({
 .about-hero {
   padding-top: 4rem;
   padding-bottom: 4rem;
-  border-bottom: 1px solid var(--color-line);
+  border-bottom: 1px solid rgba(5, 57, 73, 0.2);
 }
 
 .about-title {
   font-size: clamp(2.5rem, 5.5vw, 4.4rem);
   font-weight: 300;
   line-height: 1.1;
-  color: var(--color-foreground);
+  color: var(--color-on-sail);
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
 }
 
+.about-title-accent {
+  font-weight: 700;
+  color: var(--color-on-sail);
+}
+
 .about-subtitle {
   font-size: 1.15rem;
   line-height: 1.65;
-  color: var(--color-muted-foreground);
+  color: var(--color-on-sail);
+  opacity: 0.92;
   max-width: 48rem;
 }
 
@@ -148,7 +154,7 @@ useHead({
 }
 
 .old-way li::before {
-  content: "—";
+  content: "\2212";
   position: absolute;
   left: 0;
   color: #ff6b6b;

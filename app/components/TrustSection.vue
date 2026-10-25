@@ -18,12 +18,7 @@
         <!-- Pillar 01: Verified -->
         <div class="pillar-card glass-panel glass-edge">
           <div class="pillar-top-row">
-            <span class="pillar-badge verified-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-              Trust Pillar
-            </span>
+            <span class="pillar-tag font-mono">VERIFICATION</span>
             <span class="pillar-num font-mono">01</span>
           </div>
 
@@ -40,13 +35,7 @@
         <!-- Pillar 02: Curated -->
         <div class="pillar-card glass-panel glass-edge">
           <div class="pillar-top-row">
-            <span class="pillar-badge gold-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
-              </svg>
-              Curation Pillar
-            </span>
+            <span class="pillar-tag font-mono">CURATION</span>
             <span class="pillar-num font-mono">02</span>
           </div>
 
@@ -63,13 +52,7 @@
         <!-- Pillar 03: Know-How -->
         <div class="pillar-card glass-panel glass-edge">
           <div class="pillar-top-row">
-            <span class="pillar-badge gold-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-              </svg>
-              Know-How Pillar
-            </span>
+            <span class="pillar-tag font-mono">KNOW-HOW</span>
             <span class="pillar-num font-mono">03</span>
           </div>
 
@@ -86,13 +69,7 @@
         <!-- Pillar 04: Context -->
         <div class="pillar-card glass-panel glass-edge">
           <div class="pillar-top-row">
-            <span class="pillar-badge verified-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              Context Pillar
-            </span>
+            <span class="pillar-tag font-mono">ARRIVAL CONTEXT</span>
             <span class="pillar-num font-mono">04</span>
           </div>
 
@@ -110,7 +87,7 @@
       <!-- Verified Community Accountability Callout -->
       <div class="community-banner glass-panel">
         <div class="community-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5C042" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-butter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
           </svg>
@@ -201,6 +178,13 @@
   margin-bottom: 1.5rem;
 }
 
+.pillar-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
 .pillar-num {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
@@ -242,7 +226,7 @@
   flex-direction: column;
   gap: 1.5rem;
   align-items: flex-start;
-  border: 1px solid rgba(245, 192, 66, 0.2);
+  border: 1px solid rgba(255, 216, 64, 0.25);
 }
 
 @media (min-width: 768px) {
@@ -258,7 +242,7 @@
   width: 48px;
   height: 48px;
   border-radius: var(--radius-tile);
-  background: rgba(245, 192, 66, 0.1);
+  background: rgba(255, 216, 64, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,117 +1,264 @@
 <template>
   <header
-    :class="[
-      'fixed-header',
-      { 'scrolled': isScrolled || mobileMenuOpen }
-    ]"
+    class="floating-header-wrapper"
     role="banner"
   >
-    <div class="shell header-inner">
-      <!-- Brand Link -->
-      <NuxtLink to="/" class="brand-link" aria-label="Travelour Home">
-        <div class="brand-symbol">
-          <svg viewBox="0 0 36 36" fill="none" class="brand-icon">
-            <path d="M18 3L4 12V24L18 33L32 24V12L18 3Z" stroke="#F5C042" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M18 9L9 15V21L18 27L27 21V15L18 9Z" fill="rgba(245, 192, 66, 0.15)" stroke="#F5C042" stroke-width="1.5"/>
-            <circle cx="18" cy="18" r="3.5" fill="#F5C042"/>
-          </svg>
-        </div>
-        <div class="brand-text-group">
-          <span class="brand-name">TRAVELOUR</span>
-          <span class="brand-tag">DUBAI GATEWAY</span>
-        </div>
+    <!-- Floating Pill Island Navbar -->
+    <div
+      :class="[
+        'floating-navbar',
+        { 'is-scrolled': isScrolled },
+        { 'menu-expanded': mobileMenuOpen }
+      ]"
+    >
+      <!-- Left: White circular badge with clean Home icon -->
+      <NuxtLink
+        to="/"
+        class="brand-badge"
+        aria-label="Travelour Home"
+        @click="closeMobileMenu"
+      >
+        <svg
+          class="home-icon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9.5z" />
+        </svg>
       </NuxtLink>
 
-      <!-- Desktop Navigation: Streamlined 3 Core Links -->
-      <nav class="desktop-nav" aria-label="Primary navigation">
+      <!-- Center: Clean Desktop Navigation Links -->
+      <nav class="desktop-nav-links" aria-label="Primary navigation">
         <NuxtLink
           to="/solutions"
-          class="nav-link"
+          class="nav-item"
           :class="{ 'active': $route.path === '/solutions' }"
         >
-          Six Verticals
+          Solutions
         </NuxtLink>
         <a
           href="/#guide"
-          class="nav-link"
+          class="nav-item"
+          :class="{ 'active': $route.hash === '#guide' }"
         >
           Dubai Guide
         </a>
         <NuxtLink
           to="/business"
-          class="nav-link"
+          class="nav-item"
           :class="{ 'active': $route.path === '/business' }"
         >
-          For Businesses
+          Business
+        </NuxtLink>
+        <NuxtLink
+          to="/talent"
+          class="nav-item"
+          :class="{ 'active': $route.path === '/talent' }"
+        >
+          Talent
+        </NuxtLink>
+        <NuxtLink
+          to="/about"
+          class="nav-item"
+          :class="{ 'active': $route.path === '/about' }"
+        >
+          About
         </NuxtLink>
       </nav>
 
-      <!-- Action Buttons -->
-      <div class="header-actions">
-        <NuxtLink to="/download" class="btn btn-primary btn-header">
-          <span>Download App</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
+      <!-- Right: White Pill CTA Button -->
+      <div class="header-right-action">
+        <NuxtLink
+          to="/download"
+          class="pill-cta-btn"
+          aria-label="Get the Travelour App"
+          @click="closeMobileMenu"
+        >
+          <span>Get the App</span>
         </NuxtLink>
 
         <!-- Mobile Menu Toggle Button -->
         <button
           type="button"
-          class="mobile-toggle-btn"
+          class="mobile-menu-trigger"
+          :class="{ 'active': mobileMenuOpen }"
           :aria-expanded="mobileMenuOpen"
           aria-label="Toggle navigation menu"
           @click="toggleMobileMenu"
         >
-          <svg v-if="!mobileMenuOpen" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="4" y1="6" x2="20" y2="6"></line>
-            <line x1="4" y1="12" x2="20" y2="12"></line>
-            <line x1="4" y1="18" x2="20" y2="18"></line>
-          </svg>
-          <svg v-else width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
+          <span class="hamburger-bar top"></span>
+          <span class="hamburger-bar bottom"></span>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Drawer -->
-    <div v-if="mobileMenuOpen" class="mobile-drawer">
-      <div class="shell mobile-drawer-inner">
-        <nav class="mobile-nav-links">
-          <NuxtLink to="/solutions" class="mobile-nav-link" @click="closeMobileMenu">
-            <span class="mono-num">01</span>
-            <span>Six Verticals</span>
-          </NuxtLink>
-          <a href="/#guide" class="mobile-nav-link" @click="closeMobileMenu">
-            <span class="mono-num">02</span>
-            <span>The Dubai Guide</span>
-          </a>
-          <NuxtLink to="/business" class="mobile-nav-link" @click="closeMobileMenu">
-            <span class="mono-num">03</span>
-            <span>For Businesses</span>
-          </NuxtLink>
-        </nav>
+    <!-- Mobile Dynamic Island Glass Dropdown -->
+    <transition name="dropdown-slide">
+      <div
+        v-if="mobileMenuOpen"
+        class="mobile-dropdown-container"
+        @click.stop
+      >
+        <div class="mobile-dropdown-glass">
+          <nav class="mobile-menu-list">
+            <NuxtLink
+              to="/"
+              class="mobile-menu-item"
+              :class="{ 'active': $route.path === '/' }"
+              @click="closeMobileMenu"
+            >
+              <div class="item-icon-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+              </div>
+              <div class="item-text">
+                <span class="item-title">Home</span>
+                <span class="item-desc">Dubai Gateway App Overview</span>
+              </div>
+            </NuxtLink>
 
-        <div class="mobile-drawer-footer">
-          <NuxtLink to="/download" class="btn btn-primary w-full" @click="closeMobileMenu">
-            <span>Download Consumer App</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </NuxtLink>
+            <NuxtLink
+              to="/solutions"
+              class="mobile-menu-item"
+              :class="{ 'active': $route.path === '/solutions' }"
+              @click="closeMobileMenu"
+            >
+              <div class="item-icon-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <div class="item-text">
+                <span class="item-title">Solutions</span>
+                <span class="item-desc">Explore, Eat, Stays, Health, Edu</span>
+              </div>
+            </NuxtLink>
+
+            <a
+              href="/#guide"
+              class="mobile-menu-item"
+              @click="closeMobileMenu"
+            >
+              <div class="item-icon-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+              </div>
+              <div class="item-text">
+                <span class="item-title">Dubai Guide</span>
+                <span class="item-desc">Tolls, Culture, Laws & Blueprints</span>
+              </div>
+            </a>
+
+            <NuxtLink
+              to="/business"
+              class="mobile-menu-item"
+              :class="{ 'active': $route.path === '/business' }"
+              @click="closeMobileMenu"
+            >
+              <div class="item-icon-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <div class="item-text">
+                <span class="item-title">For Businesses</span>
+                <span class="item-desc">Demand Analytics & Verified Membership</span>
+              </div>
+            </NuxtLink>
+
+            <NuxtLink
+              to="/talent"
+              class="mobile-menu-item"
+              :class="{ 'active': $route.path === '/talent' }"
+              @click="closeMobileMenu"
+            >
+              <div class="item-icon-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                </svg>
+              </div>
+              <div class="item-text">
+                <span class="item-title">Talent Hub</span>
+                <span class="item-desc">Verified Directory & Moderated Jobs</span>
+              </div>
+            </NuxtLink>
+
+            <NuxtLink
+              to="/about"
+              class="mobile-menu-item"
+              :class="{ 'active': $route.path === '/about' }"
+              @click="closeMobileMenu"
+            >
+              <div class="item-icon-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </div>
+              <div class="item-text">
+                <span class="item-title">About</span>
+                <span class="item-desc">DIFC Governance & Verification Trust</span>
+              </div>
+            </NuxtLink>
+
+            <NuxtLink
+              to="/contact"
+              class="mobile-menu-item"
+              :class="{ 'active': $route.path === '/contact' }"
+              @click="closeMobileMenu"
+            >
+              <div class="item-icon-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="item-text">
+                <span class="item-title">Contact</span>
+                <span class="item-desc">partners@travelour.com</span>
+              </div>
+            </NuxtLink>
+          </nav>
+
+          <div class="mobile-dropdown-bottom">
+            <NuxtLink
+              to="/download"
+              class="btn-full-cta"
+              @click="closeMobileMenu"
+            >
+              <span>Get the App</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </NuxtLink>
+          </div>
         </div>
       </div>
-    </div>
+    </transition>
   </header>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
 const isScrolled = ref(false)
 const mobileMenuOpen = ref(false)
 
@@ -123,281 +270,374 @@ const handleScroll = () => {
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
-  if (typeof document !== 'undefined') {
-    document.body.style.overflow = mobileMenuOpen.value ? 'hidden' : ''
-  }
 }
 
 const closeMobileMenu = () => {
   mobileMenuOpen.value = false
-  if (typeof document !== 'undefined') {
-    document.body.style.overflow = ''
+}
+
+// Close mobile dropdown on outside click
+const handleGlobalClick = (event: MouseEvent) => {
+  const target = event.target as HTMLElement
+  if (mobileMenuOpen.value && !target.closest('.floating-header-wrapper')) {
+    closeMobileMenu()
   }
 }
 
+// Close mobile dropdown on ESC key
+const handleKeyDown = (event: KeyboardEvent) => {
+  if (event.key === 'Escape' && mobileMenuOpen.value) {
+    closeMobileMenu()
+  }
+}
+
+// Automatically close menu when navigating
+watch(() => route.fullPath, () => {
+  closeMobileMenu()
+})
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll, { passive: true })
+  document.addEventListener('click', handleGlobalClick)
+  document.addEventListener('keydown', handleKeyDown)
   handleScroll()
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  document.removeEventListener('click', handleGlobalClick)
+  document.removeEventListener('keydown', handleKeyDown)
 })
 </script>
 
 <style scoped>
-.fixed-header {
+.floating-header-wrapper {
   position: fixed;
-  top: 0;
+  top: 1.25rem;
   left: 0;
   right: 0;
-  z-index: 100;
-  height: var(--nav-height);
-  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-  background: transparent;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: none;
+  padding: 0 1rem;
 }
 
-.fixed-header.scrolled {
-  background: rgba(0, 0, 0, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
-}
-
-.header-inner {
-  height: 100%;
+/* Floating Pill Navbar */
+.floating-navbar {
+  pointer-events: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 5px 6px;
+  background: rgba(5, 42, 53, 0.92);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(143, 233, 255, 0.22);
+  border-radius: 9999px;
+  box-shadow: 
+    0 18px 38px -6px rgba(2, 24, 30, 0.72),
+    0 4px 14px -2px rgba(2, 24, 30, 0.45),
+    inset 0 1px 0 rgba(143, 233, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  max-width: 100%;
 }
 
-/* Brand Link */
-.brand-link {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
+.floating-navbar.is-scrolled {
+  background: rgba(4, 32, 40, 0.96);
+  border-color: rgba(143, 233, 255, 0.28);
+  box-shadow: 
+    0 22px 44px -6px rgba(2, 24, 30, 0.85),
+    0 6px 18px -2px rgba(2, 24, 30, 0.6),
+    inset 0 1px 0 rgba(143, 233, 255, 0.2);
 }
 
-.brand-symbol {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-tile);
-  border: 1px solid rgba(245, 192, 66, 0.3);
-  background: rgba(245, 192, 66, 0.05);
+/* Left: White circular brand badge with Home icon */
+.brand-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #053949;
   flex-shrink: 0;
+  text-decoration: none;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  box-shadow: 0 2px 10px rgba(5, 42, 53, 0.25);
 }
 
-.brand-icon {
-  width: 100%;
-  height: 100%;
+.brand-badge:hover {
+  transform: scale(1.08);
+  background: var(--color-butter);
+  color: var(--color-ink);
+  box-shadow: 0 4px 16px rgba(255, 216, 64, 0.4);
 }
 
-.brand-text-group {
-  display: flex;
-  flex-direction: column;
+.brand-badge:active {
+  transform: scale(0.96);
 }
 
-.brand-name {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--color-foreground);
-  line-height: 1.1;
+.home-icon {
+  display: block;
+  width: 19px;
+  height: 19px;
 }
 
-.brand-tag {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.22em;
-  color: var(--color-primary);
-  text-transform: uppercase;
-}
-
-/* Desktop Nav */
-.desktop-nav {
+/* Desktop Links */
+.desktop-nav-links {
   display: none;
   align-items: center;
-  gap: 2.5rem;
+  gap: 0.25rem;
 }
 
-@media (min-width: 1024px) {
-  .desktop-nav {
+@media (min-width: 860px) {
+  .desktop-nav-links {
     display: flex;
   }
 }
 
-.nav-link {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--color-muted-foreground);
+.nav-item {
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 480;
+  letter-spacing: -0.01em;
+  color: #a1a1aa;
+  padding: 0.45rem 0.95rem;
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
   position: relative;
-  padding: 0.5rem 0;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: var(--color-foreground);
+.nav-item:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.nav-link.active {
-  color: var(--color-primary);
+.nav-item.active {
+  color: var(--color-butter);
+  background: rgba(255, 216, 64, 0.14);
+  font-weight: 600;
 }
 
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: var(--color-primary);
-  transition: width 0.25s ease;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-}
-
-/* Header Actions */
-.header-actions {
+/* Right Action CTA Button (Butter Pill) */
+.header-right-action {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.4rem;
 }
 
-.btn-header {
-  padding: 0.7rem 1.4rem;
-  font-size: 0.7rem;
+.pill-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-butter);
+  color: var(--color-ink);
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(255, 216, 64, 0.35);
 }
 
-.btn-ghost-header {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--color-muted-foreground);
-  padding: 0.6rem 1rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s ease;
+.pill-cta-btn:hover {
+  background: var(--color-butter-hover);
+  color: var(--color-ink);
+  transform: translateY(-0.5px);
+  box-shadow: 0 4px 16px rgba(255, 216, 64, 0.55);
 }
 
-.btn-ghost-header:hover {
-  color: var(--color-foreground);
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.d-none-sm {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .d-none-sm {
-    display: inline-flex;
-  }
+.pill-cta-btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* Mobile Toggle */
-.mobile-toggle-btn {
+.mobile-menu-trigger {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-tile);
-  border: 1px solid var(--color-line);
-  color: var(--color-foreground);
-  background: rgba(255, 255, 255, 0.04);
+  align-items: center;
+  gap: 4px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  cursor: pointer;
   transition: all 0.2s ease;
 }
 
-@media (min-width: 1024px) {
-  .mobile-toggle-btn {
+@media (min-width: 860px) {
+  .mobile-menu-trigger {
     display: none;
   }
 }
 
-.mobile-toggle-btn:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+.mobile-menu-trigger:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
-/* Mobile Drawer */
-.mobile-drawer {
-  position: fixed;
-  top: var(--nav-height);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: calc(100vh - var(--nav-height));
-  background: #000000;
-  border-top: 1px solid var(--color-line);
-  overflow-y: auto;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-  animation: fadeIn 0.3s ease;
+.hamburger-bar {
+  display: block;
+  width: 15px;
+  height: 1.5px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+.mobile-menu-trigger.active .hamburger-bar.top {
+  transform: translateY(2.75px) rotate(45deg);
 }
 
-.mobile-drawer-inner {
+.mobile-menu-trigger.active .hamburger-bar.bottom {
+  transform: translateY(-2.75px) rotate(-45deg);
+}
+
+/* Mobile Dropdown Container */
+.mobile-dropdown-container {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100vw - 2rem);
+  max-width: 440px;
+  pointer-events: auto;
+}
+
+.mobile-dropdown-glass {
+  background: rgba(5, 42, 53, 0.96);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(143, 233, 255, 0.22);
+  border-radius: 1.5rem;
+  box-shadow: 
+    0 24px 48px -10px rgba(2, 24, 30, 0.85),
+    0 8px 24px -4px rgba(2, 24, 30, 0.6),
+    inset 0 1px 0 rgba(143, 233, 255, 0.18);
+  padding: 0.75rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  gap: 0.35rem;
 }
 
-.mobile-nav-links {
+.mobile-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.25rem;
 }
 
-.mobile-nav-link {
+.mobile-menu-item {
   display: flex;
-  align-items: baseline;
-  gap: 1.25rem;
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: var(--color-foreground);
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.mobile-nav-link:hover {
-  color: var(--color-primary);
-  padding-left: 0.5rem;
-}
-
-.mono-num {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  color: var(--color-primary);
-}
-
-.mobile-drawer-footer {
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 0.85rem;
-  margin-top: 2.5rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 1rem;
+  color: #e4e4e7;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-.w-full {
+.mobile-menu-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.mobile-menu-item.active {
+  background: rgba(255, 216, 64, 0.14);
+  color: var(--color-butter);
+}
+
+.mobile-menu-item.active .item-title {
+  color: var(--color-butter);
+  font-weight: 600;
+}
+
+.mobile-menu-item.active .item-icon-box {
+  background: var(--color-butter);
+  color: var(--color-ink);
+}
+
+.item-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.item-title {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.item-desc {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: #a1a1aa;
+}
+
+.mobile-dropdown-bottom {
+  margin-top: 0.4rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-full-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
+  background: var(--color-butter);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(255, 216, 64, 0.35);
+}
+
+.btn-full-cta:hover {
+  background: var(--color-butter-hover);
+}
+
+/* Transition Animations */
+.dropdown-slide-enter-active,
+.dropdown-slide-leave-active {
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown-slide-enter-from,
+.dropdown-slide-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -10px) scale(0.97);
 }
 </style>

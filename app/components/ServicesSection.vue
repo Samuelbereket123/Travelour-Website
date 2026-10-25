@@ -254,16 +254,19 @@
 }
 
 .btn-paper-primary {
-  background-color: var(--color-paper-foreground);
-  color: #ffffff;
+  background-color: var(--color-butter);
+  color: var(--color-ink);
+  font-weight: 700;
   padding: 0.85rem 1.85rem;
   font-size: 0.75rem;
+  box-shadow: 0 4px 16px rgba(255, 216, 64, 0.35);
 }
 
 .btn-paper-primary:hover {
-  background-color: #000000;
+  background-color: var(--color-butter-hover);
+  color: var(--color-ink);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 216, 64, 0.5);
 }
 
 /* Right Grid */

@@ -1,13 +1,13 @@
 <template>
   <div class="page-contact">
-    <section class="contact-hero section-spacing">
+    <section class="contact-hero section-spacing hero-sail">
       <div class="shell">
         <p class="eyebrow">
           GET IN TOUCH WITH TRAVELOUR
         </p>
         <h1 class="contact-title font-display">
           We are here in Dubai.<br />
-          <span class="gold-text-gradient">Let's build something trusted.</span>
+          <span class="contact-title-accent">Let's build something trusted.</span>
         </h1>
         <p class="contact-subtitle font-sans">
           Whether you want to partner your business, inquire about commercial memberships, suggest a Dubai hidden gem, or speak with our operator team: we respond within 24 hours.
@@ -81,7 +81,7 @@
             <div class="info-box glass-panel">
               <span class="info-label font-mono">OFFICE HOURS</span>
               <p class="info-sub font-sans">
-                Monday – Friday: 9:00 AM – 6:00 PM GST<br />
+                Monday to Friday: 9:00 AM to 6:00 PM GST<br />
                 Urgent operator response: 24/7 on designated member lines
               </p>
             </div>
@@ -125,23 +125,29 @@ const sendMessage = () => {
 .contact-hero {
   padding-top: 4rem;
   padding-bottom: 4rem;
-  border-bottom: 1px solid var(--color-line);
+  border-bottom: 1px solid rgba(5, 57, 73, 0.2);
 }
 
 .contact-title {
   font-size: clamp(2.5rem, 5.5vw, 4.4rem);
   font-weight: 300;
   line-height: 1.1;
-  color: var(--color-foreground);
+  color: var(--color-on-sail);
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
 }
 
+.contact-title-accent {
+  font-weight: 700;
+  color: var(--color-on-sail);
+}
+
 .contact-subtitle {
   font-size: 1.15rem;
   line-height: 1.65;
-  color: var(--color-muted-foreground);
+  color: var(--color-on-sail);
+  opacity: 0.92;
   max-width: 48rem;
 }
 
@@ -216,7 +222,7 @@ const sendMessage = () => {
 }
 
 .text-select option {
-  background: #000;
+  background: var(--color-surface);
   color: #fff;
 }
 

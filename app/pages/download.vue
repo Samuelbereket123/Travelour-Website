@@ -1,13 +1,13 @@
 <template>
   <div class="page-download">
-    <section class="download-hero section-spacing">
+    <section class="download-hero section-spacing hero-sail">
       <div class="shell download-shell">
         <p class="eyebrow">
           GET THE TRAVELOUR MOBILE APP
         </p>
         <h1 class="download-title font-display">
           Your Dubai gateway<br />
-          <span class="gold-text-gradient">in your pocket.</span>
+          <span class="download-title-accent">in your pocket.</span>
         </h1>
         <p class="download-subtitle font-sans">
           One Expo app available natively on iOS, Android, and the web. Free for consumers forever. Zero advertisements, zero spam, and instant direct connection.
@@ -60,7 +60,7 @@
           <!-- Web PWA -->
           <div class="download-card glass-panel glass-edge">
             <div class="platform-icon">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#F5C042" stroke-width="2">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="10"></circle>
                 <line x1="2" y1="12" x2="22" y2="12"></line>
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
@@ -122,6 +122,7 @@ const showToast = (msg: string) => {
 .download-hero {
   padding-top: 5rem;
   padding-bottom: 6rem;
+  border-bottom: 1px solid rgba(5, 57, 73, 0.2);
 }
 
 .download-shell {
@@ -135,17 +136,23 @@ const showToast = (msg: string) => {
   font-size: clamp(2.5rem, 6vw, 4.6rem);
   font-weight: 300;
   line-height: 1.05;
-  color: var(--color-foreground);
+  color: var(--color-on-sail);
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
   max-width: 50rem;
 }
 
+.download-title-accent {
+  font-weight: 700;
+  color: var(--color-on-sail);
+}
+
 .download-subtitle {
   font-size: 1.15rem;
   line-height: 1.65;
-  color: var(--color-muted-foreground);
+  color: var(--color-on-sail);
+  opacity: 0.92;
   max-width: 44rem;
   margin-bottom: 3.5rem;
 }
@@ -171,31 +178,46 @@ const showToast = (msg: string) => {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(5, 57, 73, 0.2);
+  box-shadow: 0 10px 30px rgba(5, 57, 73, 0.12);
+  transition: all 0.3s ease;
+}
+
+.download-card:hover {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: var(--color-on-sail);
+  transform: translateY(-3px);
 }
 
 .platform-icon {
   margin-bottom: 1.25rem;
-  color: #fff;
+  color: var(--color-on-sail);
 }
 
 .platform-name {
   font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--color-foreground);
+  font-weight: 700;
+  color: var(--color-on-sail);
   margin-bottom: 0.35rem;
 }
 
 .platform-req {
   font-size: 0.65rem;
   letter-spacing: 0.15em;
-  color: var(--color-primary);
+  color: var(--color-on-sail);
+  opacity: 0.85;
+  font-weight: 700;
   margin-bottom: 1.25rem;
 }
 
 .platform-desc {
   font-size: 0.88rem;
   line-height: 1.6;
-  color: var(--color-muted-foreground);
+  color: var(--color-on-sail);
+  opacity: 0.92;
   margin-bottom: 2rem;
   flex: 1;
 }

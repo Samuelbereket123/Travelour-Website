@@ -40,7 +40,7 @@
         <div class="talent-right-col">
           <div class="audience-card glass-panel">
             <div class="audience-header">
-              <span class="verified-badge font-mono">FOR PROFESSIONALS</span>
+              <span class="audience-tag font-mono">FOR PROFESSIONALS</span>
               <span class="audience-num font-mono">01</span>
             </div>
             <h3 class="audience-title font-display">Get Discovered By Licensed UAE Employers</h3>
@@ -57,7 +57,7 @@
 
           <div class="audience-card glass-panel">
             <div class="audience-header">
-              <span class="gold-badge font-mono">FOR EMPLOYERS</span>
+              <span class="audience-tag font-mono">FOR EMPLOYERS</span>
               <span class="audience-num font-mono">02</span>
             </div>
             <h3 class="audience-title font-display">Search Verified Talent & Post Moderated Jobs</h3>
@@ -215,6 +215,13 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1.25rem;
+}
+
+.audience-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--color-primary);
+  text-transform: uppercase;
 }
 
 .audience-num {

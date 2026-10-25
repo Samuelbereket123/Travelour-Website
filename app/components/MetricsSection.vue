@@ -14,7 +14,6 @@
             <span v-if="metric.suffix" class="metric-suffix font-mono">{{ metric.suffix }}</span>
           </div>
           <span class="metric-label font-mono">{{ metric.label }}</span>
-          <span class="metric-subtext font-sans">{{ metric.subtext }}</span>
         </div>
       </div>
     </div>
@@ -26,38 +25,32 @@ const metrics = [
   {
     value: '6',
     suffix: 'Verticals',
-    label: 'Curated Directories',
-    subtext: 'Explore, Eat, Stays, Health, Education & Talent'
+    label: 'Curated Directories'
   },
   {
     value: '100',
     suffix: '%',
-    label: 'KYC Verified',
-    subtext: 'Signed business agreements before go-live'
+    label: 'KYC Verified'
   },
   {
     value: '0',
     suffix: 'Scraped',
-    label: 'Verified Relationships',
-    subtext: 'No automated web scraping or unvetted spam'
+    label: 'Verified Relationships'
   },
   {
     value: '48',
     suffix: 'Hours',
-    label: 'Arrival Journeys',
-    subtext: 'Step-by-step guides turning a city into a plan'
+    label: 'Arrival Journeys'
   },
   {
     value: 'AED 0',
     suffix: '',
-    label: 'Consumer Cost',
-    subtext: 'Free access for visitors, new arrivals & residents'
+    label: 'Consumer Cost'
   },
   {
     value: 'Direct',
     suffix: 'Touch',
-    label: 'WhatsApp & Call',
-    subtext: 'Contact member venues and verified talent directly'
+    label: 'WhatsApp & Call'
   }
 ]
 </script>
@@ -125,12 +118,5 @@ const metrics = [
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--color-muted-foreground);
-}
-
-.metric-subtext {
-  margin-top: 0.4rem;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  color: var(--color-muted-subtle);
 }
 </style>

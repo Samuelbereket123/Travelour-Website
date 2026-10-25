@@ -3,45 +3,63 @@
    Inspired by MELA Digital's ultra-premium editorial dark-mode aesthetic
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
-
 :root {
-  --color-background: #000000;
-  --color-surface: #0a0c10;
-  --color-surface-hover: #12151c;
-  --color-surface-card: #0d0f15;
-  --color-surface-border: #1c202a;
+  /* Brand Gradients */
+  --color-sail-light: #8fe9ff;
+  --color-sail-mid: #0cbce8;
+  --color-sail-deep: #12586e;
+
+  /* Typography */
+  --color-on-sail: #053949; /* Text on gradient (never white) */
+  --color-ink: #0d191c;     /* Standard body text */
+
+  /* Accents */
+  --color-butter: #ffd840;  /* Primary CTAs & badges */
+  --color-butter-hover: #f5cf30;
+  --color-butter-foreground: #0d191c;
+
+  /* Sail Gradient Presets */
+  --gradient-sail: linear-gradient(135deg, var(--color-sail-light) 0%, var(--color-sail-mid) 48%, var(--color-sail-deep) 100%);
+  --gradient-sail-horizontal: linear-gradient(90deg, var(--color-sail-light) 0%, var(--color-sail-mid) 50%, var(--color-sail-deep) 100%);
+  --gradient-sail-vertical: linear-gradient(180deg, var(--color-sail-light) 0%, var(--color-sail-mid) 50%, var(--color-sail-deep) 100%);
+
+  /* Primary Accent maps to Butter */
+  --color-primary: var(--color-butter);
+  --color-primary-hover: var(--color-butter-hover);
+  --color-primary-foreground: var(--color-ink);
+  --color-primary-dim: rgba(255, 216, 64, 0.14);
+  --color-primary-border: rgba(255, 216, 64, 0.38);
+
+  /* Surface & Background (Company Deep Teal Palette) */
+  --color-background: #052a35;
+  --color-surface: #073847;
+  --color-surface-hover: #0b495c;
+  --color-surface-card: #06313f;
+  --color-surface-border: rgba(143, 233, 255, 0.16);
   
   --color-foreground: #ffffff;
-  --color-muted-foreground: #a0a6b5;
-  --color-muted-subtle: #6e7587;
-  
-  /* Travelour Gold & Dubai Amber Glow */
-  --color-primary: #F5C042;
-  --color-primary-hover: #ffd269;
-  --color-primary-foreground: #08090b;
-  --color-primary-dim: rgba(245, 192, 66, 0.12);
-  --color-primary-border: rgba(245, 192, 66, 0.35);
+  --color-muted-foreground: #a6d8e7;
+  --color-muted-subtle: #6da2b3;
   
   /* Dubai Verified Emerald / WhatsApp Green */
   --color-emerald: #10E7A2;
   --color-emerald-dim: rgba(16, 231, 162, 0.12);
   --color-whatsapp: #25D366;
   
-  /* High-Contrast Editorial Paper Block (MELA signature aesthetic) */
+  /* Light Surfaces (Ink for headings & body copy on white/off-white) */
   --color-paper: #F8F9FA;
-  --color-paper-foreground: #0B0E14;
-  --color-paper-muted: #646c7d;
-  --color-paper-border: rgba(11, 14, 20, 0.12);
+  --color-paper-foreground: var(--color-ink);
+  --color-paper-muted: #2f3a3d;
+  --color-paper-border: rgba(13, 25, 28, 0.12);
   
   /* Line & borders */
-  --color-line: #1c202b;
-  --color-line-subtle: rgba(255, 255, 255, 0.08);
+  --color-line: rgba(143, 233, 255, 0.14);
+  --color-line-subtle: rgba(143, 233, 255, 0.08);
   
-  /* Luxury Typography: Outfit (Display) + Plus Jakarta Sans (Body) + JetBrains Mono (Technical) */
-  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /* DM Sans for display + body */
+  --font-display: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   
   /* Shell & Spacing */
   --max-shell: 82rem;
@@ -52,9 +70,9 @@
   --radius-pill: 9999px;
   
   /* Glow Shadows */
-  --shadow-glow-soft: 0 0 24px rgba(245, 192, 66, 0.22);
-  --shadow-glow-intense: 0 0 48px rgba(245, 192, 66, 0.4);
-  --shadow-card: 0 24px 60px -20px rgba(0, 0, 0, 0.85);
+  --shadow-glow-soft: 0 4px 20px rgba(255, 216, 64, 0.28);
+  --shadow-glow-intense: 0 6px 36px rgba(255, 216, 64, 0.45);
+  --shadow-card: 0 24px 60px -20px rgba(2, 24, 30, 0.85);
 }
 
 /* Base resets */
@@ -118,8 +136,9 @@ img, video {
 .font-sans { font-family: var(--font-sans); }
 .font-mono { font-family: var(--font-mono); }
 
-.gold-text-gradient {
-  background: linear-gradient(96deg, #ffffff 0%, #FFE6A3 42%, #F5C042 100%);
+.gold-text-gradient,
+.butter-text-gradient {
+  background: linear-gradient(96deg, #ffffff 0%, #FFF2B2 42%, #FFD840 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -148,11 +167,10 @@ img, video {
 .eyebrow::before {
   content: "";
   display: inline-block;
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background-color: var(--color-primary);
-  box-shadow: 0 0 10px var(--color-primary);
 }
 
 /* ==========================================================================
@@ -199,11 +217,11 @@ img, video {
    ========================================================================== */
 
 .glass-panel {
-  background: rgba(14, 17, 24, 0.75);
+  background: rgba(6, 49, 63, 0.82);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(143, 233, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(143, 233, 255, 0.12);
 }
 
 .glass-edge {
@@ -217,7 +235,7 @@ img, video {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(180deg, rgba(245, 192, 66, 0.5) 0%, rgba(255, 255, 255, 0.15) 25%, rgba(255, 255, 255, 0) 55%, rgba(245, 192, 66, 0.3) 100%);
+  background: linear-gradient(180deg, rgba(255, 216, 64, 0.45) 0%, rgba(255, 255, 255, 0.15) 25%, rgba(255, 255, 255, 0) 55%, rgba(255, 216, 64, 0.3) 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -245,7 +263,143 @@ img, video {
 }
 
 /* ==========================================================================
+   SAIL GRADIENT HERO SECTIONS & BANNERS
+   Start: #8FE9FF (Light Cyan) | Mid: #0CBCE8 (Sky Blue) | End: #12586E (Deep Teal)
+   Strict Rule: Never use white text over the cyan/sky gradient.
+   Always use this dark teal tone (#053949) for readability.
+   ========================================================================== */
+
+.bg-sail,
+.hero-sail {
+  background: var(--gradient-sail);
+  color: var(--color-on-sail);
+  position: relative;
+}
+
+/* Enforce dark teal text for all typography on Sail Gradient */
+.bg-sail h1,
+.bg-sail h2,
+.bg-sail h3,
+.bg-sail h4,
+.bg-sail h5,
+.bg-sail h6,
+.bg-sail p,
+.bg-sail li,
+.bg-sail label,
+.hero-sail h1,
+.hero-sail h2,
+.hero-sail h3,
+.hero-sail h4,
+.hero-sail h5,
+.hero-sail h6,
+.hero-sail p,
+.hero-sail li,
+.hero-sail label {
+  color: var(--color-on-sail);
+}
+
+.text-on-sail {
+  color: var(--color-on-sail) !important;
+}
+
+.text-ink {
+  color: var(--color-ink) !important;
+}
+
+.text-butter {
+  color: var(--color-butter) !important;
+}
+
+.bg-sail .eyebrow,
+.hero-sail .eyebrow {
+  color: var(--color-on-sail);
+  font-weight: 700;
+}
+
+.bg-sail .eyebrow::before,
+.hero-sail .eyebrow::before {
+  background-color: var(--color-on-sail);
+}
+
+/* Primary CTA on Sail Gradient uses Butter */
+.bg-sail .btn-primary,
+.hero-sail .btn-primary {
+  background-color: var(--color-butter);
+  color: var(--color-ink);
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(5, 57, 73, 0.25);
+  border: 1px solid rgba(5, 57, 73, 0.12);
+}
+
+.bg-sail .btn-primary:hover,
+.hero-sail .btn-primary:hover {
+  background-color: var(--color-butter-hover);
+  color: var(--color-ink);
+  box-shadow: 0 6px 26px rgba(5, 57, 73, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Secondary CTA on Sail Gradient */
+.bg-sail .btn-secondary,
+.hero-sail .btn-secondary,
+.btn-sail-secondary {
+  background: rgba(5, 57, 73, 0.08);
+  color: var(--color-on-sail);
+  border: 1.5px solid var(--color-on-sail);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-pill);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.bg-sail .btn-secondary:hover,
+.hero-sail .btn-secondary:hover,
+.btn-sail-secondary:hover {
+  background: var(--color-on-sail);
+  color: var(--color-sail-light);
+  border-color: var(--color-on-sail);
+  transform: translateY(-2px);
+}
+
+.bg-sail .btn-link-gold,
+.hero-sail .btn-link-gold {
+  color: var(--color-on-sail);
+  border-bottom-color: var(--color-on-sail);
+}
+
+/* Frosted Glass Pills over Sail */
+.bg-sail .glass-pill,
+.hero-sail .glass-pill {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(5, 57, 73, 0.18);
+  color: var(--color-on-sail);
+}
+
+.bg-sail .glass-pill:hover,
+.hero-sail .glass-pill:hover {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: var(--color-on-sail);
+  color: var(--color-on-sail);
+}
+
+/* ==========================================================================
    BUTTONS & INTERACTIVE ELEMENTS
+   Primary Action: Butter (#FFD840) with Ink (#0D191C)
    ========================================================================== */
 
 .btn {
@@ -266,13 +420,15 @@ img, video {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-primary-foreground);
+  background-color: var(--color-butter);
+  color: var(--color-ink);
+  font-weight: 700;
   box-shadow: var(--shadow-glow-soft);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-hover);
+  background-color: var(--color-butter-hover);
+  color: var(--color-ink);
   box-shadow: var(--shadow-glow-intense);
   transform: scale(1.02);
 }
@@ -314,70 +470,57 @@ img, video {
 
 /* ==========================================================================
    BADGES & CHIPS
+   Butter (#FFD840) for Trust Badges & Verified Markers
    ========================================================================== */
 
-.verified-badge {
+.verified-badge,
+.trust-badge,
+.gold-badge,
+.butter-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(16, 231, 162, 0.12);
-  border: 1px solid rgba(16, 231, 162, 0.3);
-  color: var(--color-emerald);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  background: rgba(255, 216, 64, 0.14);
+  border: 1px solid rgba(255, 216, 64, 0.38);
+  color: var(--color-butter);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-pill);
-}
-
-.gold-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  background: var(--color-primary-dim);
-  border: 1px solid var(--color-primary-border);
-  color: var(--color-primary);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-pill);
+  border-radius: 4px;
 }
 
 .pulse-emerald-dot {
   display: inline-block;
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--color-emerald);
-  box-shadow: 0 0 10px var(--color-emerald);
   margin-right: 6px;
-  animation: pulseEmerald 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulseEmerald {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
 }
 
 /* ==========================================================================
-   HIGH CONTRAST EDITORIAL PAPER SECTION (MELA signature)
+   HIGH CONTRAST EDITORIAL PAPER SECTION
+   Ink (#0D191C) for standard copy, paragraphs, and headings
    ========================================================================== */
 
 .paper-section {
   background-color: var(--color-paper);
-  color: var(--color-paper-foreground);
+  color: var(--color-ink);
   position: relative;
 }
 
-.paper-section h2, .paper-section h3, .paper-section h4 {
-  color: var(--color-paper-foreground);
+.paper-section h1,
+.paper-section h2,
+.paper-section h3,
+.paper-section h4 {
+  color: var(--color-ink);
 }
 
-.paper-section p {
-  color: var(--color-paper-muted);
+.paper-section p,
+.paper-section li {
+  color: var(--color-ink);
 }
 
 .paper-card {
@@ -443,10 +586,10 @@ img, video {
 .phone-mockup-frame {
   width: 320px;
   height: 640px;
-  background: #090a0d;
-  border: 8px solid #1c202a;
+  background: #062b36;
+  border: 8px solid #0d4657;
   border-radius: 44px;
-  box-shadow: 0 35px 80px -20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(245, 192, 66, 0.15);
+  box-shadow: 0 35px 80px -20px rgba(2, 24, 30, 0.9), 0 0 40px rgba(12, 188, 232, 0.2);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -463,7 +606,7 @@ img, video {
 .phone-mockup-screen {
   flex: 1;
   overflow-y: auto;
-  background: #08090b;
+  background: #05222b;
   display: flex;
   flex-direction: column;
   color: #fff;
@@ -515,7 +658,7 @@ img, video {
 
 /* Night fade overlay */
 .bg-night-fade {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.3) 45%, rgba(0, 0, 0, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(5, 42, 53, 0.82) 0%, rgba(5, 42, 53, 0.3) 45%, rgba(5, 42, 53, 0.95) 100%);
 }
 
 .divider-line {

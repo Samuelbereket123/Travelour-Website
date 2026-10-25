@@ -64,13 +64,7 @@
           <!-- When in Listing Detail Mode -->
           <div v-else class="listing-feature-panel glass-panel">
             <div class="listing-info-badge-row">
-              <span class="verified-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                KYC Signed Business
-              </span>
-              <span class="font-mono text-xs text-gold">DEMAND TRACKED</span>
+              <p class="eyebrow">KYC Signed Business · Demand Tracked</p>
             </div>
 
             <h3 class="listing-heading font-display">Rich Detail Pages Built for Direct Action</h3>
@@ -94,7 +88,7 @@
             </ul>
 
             <div class="demand-note glass-panel">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5C042" stroke-width="2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-butter)" stroke-width="2">
                 <line x1="18" y1="20" x2="18" y2="10"></line>
                 <line x1="12" y1="20" x2="12" y2="4"></line>
                 <line x1="6" y1="20" x2="6" y2="14"></line>
@@ -295,9 +289,6 @@
                 <!-- Listing Media Header -->
                 <div class="listing-mock-hero">
                   <img src="/images/vertical_eat.jpg" alt="Restaurant detail" class="listing-mock-img" />
-                  <div class="listing-mock-overlay">
-                    <span class="verified-badge">KYC Verified</span>
-                  </div>
                 </div>
 
                 <div class="listing-mock-body">
@@ -316,7 +307,7 @@
                   <div class="tiered-facts-block font-sans">
                     <div class="fact-row">
                       <span class="fact-label font-mono">ESSENTIALS</span>
-                      <span class="fact-val">Daily 12:00 PM – 11:30 PM · Valet Available</span>
+                      <span class="fact-val">Daily 12:00 PM to 11:30 PM · Valet Available</span>
                     </div>
                     <div class="fact-row">
                       <span class="fact-label font-mono">STAND OUT</span>
@@ -369,7 +360,7 @@ const appTabs = [
   },
   {
     name: 'Offers',
-    description: 'Live offers from member businesses. Users show the pass at the venue — zero coupon codes. A single foreground check triggers at most one local alert a day.',
+    description: 'Live offers from member businesses. Users show the pass at the venue with zero coupon codes required. A single foreground check triggers at most one local alert a day.',
     elements: ['Zero Codes', 'Geofenced Alert', 'Digital Pass', 'Exclusive Perks']
   },
   {
@@ -651,7 +642,7 @@ const appTabs = [
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
+  background: #062b36;
   position: relative;
   z-index: 20;
 }
@@ -659,7 +650,7 @@ const appTabs = [
 .camera-lens {
   width: 75px;
   height: 14px;
-  background: #111;
+  background: #042028;
   border-radius: 10px;
 }
 
@@ -784,8 +775,8 @@ const appTabs = [
 .phone-bottom-nav {
   display: flex;
   justify-content: space-around;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: #000;
+  border-top: 1px solid rgba(143, 233, 255, 0.12);
+  background: #062b36;
   padding: 0.5rem 0;
   font-family: var(--font-mono);
   font-size: 0.6rem;

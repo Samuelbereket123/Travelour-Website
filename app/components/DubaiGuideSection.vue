@@ -68,10 +68,9 @@
       <!-- Curated Journeys Strip -->
       <div class="journeys-hub-section">
         <div class="journeys-intro">
-          <div class="journeys-tag-group">
-            <span class="verified-badge">Curated Journeys</span>
-            <span class="font-mono text-muted text-xs">COLLECTIONS OF ARTICLES & LISTINGS</span>
-          </div>
+          <p class="eyebrow journeys-eyebrow">
+            Curated Journeys · Step-by-Step Plans
+          </p>
           <h3 class="journeys-heading font-display">
             Turning directories into a step-by-step plan.
           </h3>
@@ -269,7 +268,7 @@ const journeys = [
 
 <style scoped>
 .guide-section {
-  background-color: #050608;
+  background-color: var(--color-background);
   border-top: 1px solid var(--color-line);
 }
 
@@ -331,7 +330,7 @@ const journeys = [
   background: var(--color-primary);
   color: var(--color-primary-foreground);
   border-color: var(--color-primary);
-  box-shadow: 0 0 20px rgba(245, 192, 66, 0.25);
+  box-shadow: 0 4px 20px rgba(255, 216, 64, 0.35);
 }
 
 .tab-index {

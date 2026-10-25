@@ -1,14 +1,14 @@
 <template>
   <div class="page-business">
     <!-- Business Hero -->
-    <section class="biz-hero section-spacing">
+    <section class="biz-hero section-spacing hero-sail">
       <div class="shell">
         <p class="eyebrow">
           TRAVELOUR FOR MEMBER BUSINESSES
         </p>
         <h1 class="biz-hero-title font-display">
           Stop paying for cold clicks.<br />
-          <span class="gold-text-gradient">Prove demand with verified visitors.</span>
+          <span class="biz-hero-title-accent">Prove demand with verified visitors.</span>
         </h1>
         <p class="biz-hero-subtitle font-sans">
           Travelour is the Dubai gateway app. Consumers use it for free, and member businesses pay a flat annual membership to be listed, discovered, and contacted directly via WhatsApp and telephone.
@@ -22,7 +22,7 @@
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
           </a>
-          <span class="verified-badge font-mono">Invite Only · KYC Verified</span>
+          <span class="biz-cta-note font-sans">Invite only · KYC verified</span>
         </div>
       </div>
     </section>
@@ -62,7 +62,7 @@
             <span class="dive-tag font-mono">03 · PROXIMITY</span>
             <h3 class="dive-title font-display">Geofenced Offers</h3>
             <p class="dive-desc font-sans">
-              Compose targeted venue passes with custom geofences and schedules. The app raises a subtle notification when verified users are near your venue. No discount codes — users show the pass.
+              Compose targeted venue passes with custom geofences and schedules. The app raises a subtle notification when verified users are near your venue. No discount codes needed. Users simply show the pass.
             </p>
             <div class="dive-metric font-mono">
               <span class="metric-accent">Ad Credits Included</span>
@@ -227,23 +227,29 @@ const submitForm = () => {
 .biz-hero {
   padding-top: 4rem;
   padding-bottom: 4rem;
-  border-bottom: 1px solid var(--color-line);
+  border-bottom: 1px solid rgba(5, 57, 73, 0.2);
 }
 
 .biz-hero-title {
   font-size: clamp(2.5rem, 5.5vw, 4.4rem);
   font-weight: 300;
   line-height: 1.1;
-  color: var(--color-foreground);
+  color: var(--color-on-sail);
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
 }
 
+.biz-hero-title-accent {
+  font-weight: 700;
+  color: var(--color-on-sail);
+}
+
 .biz-hero-subtitle {
   font-size: 1.15rem;
   line-height: 1.65;
-  color: var(--color-muted-foreground);
+  color: var(--color-on-sail);
+  opacity: 0.92;
   max-width: 48rem;
   margin-bottom: 2.5rem;
 }
@@ -252,6 +258,13 @@ const submitForm = () => {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+.biz-cta-note {
+  font-size: 0.85rem;
+  color: var(--color-on-sail);
+  opacity: 0.85;
+  font-weight: 600;
 }
 
 /* Deep dive */
@@ -385,7 +398,7 @@ const submitForm = () => {
 }
 
 .form-select option {
-  background: #000;
+  background: var(--color-surface);
   color: #fff;
 }
 

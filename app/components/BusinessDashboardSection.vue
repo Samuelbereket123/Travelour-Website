@@ -19,7 +19,7 @@
         <!-- 01 Demand Funnel -->
         <div class="dash-card glass-panel glass-edge">
           <div class="dash-icon-box">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5C042" stroke-width="2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-butter)" stroke-width="2">
               <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
             </svg>
           </div>
@@ -58,7 +58,7 @@
         <!-- 03 Geofenced Ads & Offers -->
         <div class="dash-card glass-panel glass-edge">
           <div class="dash-icon-box">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5C042" stroke-width="2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-butter)" stroke-width="2">
               <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
               <line x1="8" y1="2" x2="8" y2="18"></line>
               <line x1="16" y1="6" x2="16" y2="22"></line>
@@ -71,7 +71,7 @@
           </p>
           <ul class="dash-bullets font-mono">
             <li>Included ads-credit allowance</li>
-            <li>No coupon codes — show digital pass</li>
+            <li>No coupon codes: show digital pass</li>
             <li>Operator moderation quality check</li>
           </ul>
         </div>
@@ -80,10 +80,9 @@
       <!-- Invite-Only Joining Pipeline -->
       <div class="pipeline-section glass-panel">
         <div class="pipeline-header">
-          <div class="pipeline-tag-wrap">
-            <span class="verified-badge font-mono">SUPPLY IS INVITE ONLY</span>
-            <span class="font-mono text-muted text-xs">NO SCRAPED OR UNVETTED ENTRIES</span>
-          </div>
+          <p class="eyebrow pipeline-eyebrow">
+            Supply Is Invite Only · No Scraped Entries
+          </p>
           <h3 class="pipeline-title font-display">
             How a Business Joins Travelour
           </h3>
@@ -131,7 +130,7 @@ const pipelineSteps = [
 
 <style scoped>
 .biz-section {
-  background-color: #06080b;
+  background-color: var(--color-surface-card);
   border-top: 1px solid var(--color-line);
 }
 

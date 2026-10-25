@@ -15,9 +15,6 @@
     <!-- The Dubai Guidebook & Curated Journeys -->
     <DubaiGuideSection />
 
-    <!-- Interactive App Showcase (5 Tabs & Verified Listing Detail) -->
-    <InteractiveAppShowcase />
-
     <!-- The Business Dashboard & Invite-Only Onboarding -->
     <BusinessDashboardSection />
 
