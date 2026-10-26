@@ -16,7 +16,7 @@
         to="/"
         class="brand-badge"
         aria-label="Travelour Home"
-        @click="closeMobileMenu"
+        @click="closeAllMenus"
       >
         <svg
           class="home-icon"
@@ -34,7 +34,7 @@
         </svg>
       </NuxtLink>
 
-      <!-- Center: Clean Desktop Navigation Links (Current List Items) -->
+      <!-- Center: Clean Desktop Navigation Links -->
       <nav class="desktop-nav-links" aria-label="Primary navigation">
         <NuxtLink
           to="/solutions"
@@ -43,6 +43,7 @@
         >
           Solutions
         </NuxtLink>
+
         <NuxtLink
           to="/about"
           class="nav-item"
@@ -50,19 +51,84 @@
         >
           About
         </NuxtLink>
-        <NuxtLink
-          to="/business"
-          class="nav-item"
-          :class="{ 'active': $route.path === '/business' }"
+
+        <!-- Business & Talent Dropdown Island (Rock-solid Hover Shield) -->
+        <div
+          class="nav-dropdown-wrapper"
+          :class="{ 'is-open': dropdownOpen }"
         >
-          Business
-        </NuxtLink>
+          <button
+            type="button"
+            class="nav-item nav-item-dropdown"
+            :class="{
+              'active': $route.path === '/business' || $route.path === '/talent',
+              'is-open': dropdownOpen
+            }"
+            aria-haspopup="true"
+            :aria-expanded="dropdownOpen"
+            @click="toggleDropdown"
+          >
+            <span>Business &amp; Talent</span>
+            <svg
+              class="chevron-icon"
+              width="11"
+              height="11"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <!-- Minimalist Luxury Dropdown Menu -->
+          <div
+            class="nav-dropdown-panel"
+            role="menu"
+            aria-label="Business & Talent navigation"
+          >
+            <div class="nav-dropdown-inner">
+              <NuxtLink
+                to="/business"
+                class="nav-drop-item"
+                :class="{ 'active': $route.path === '/business' }"
+                role="menuitem"
+                @click="closeAllMenus"
+              >
+                <span>Business</span>
+                <svg class="drop-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </NuxtLink>
+
+              <div class="nav-drop-divider" aria-hidden="true"></div>
+
+              <NuxtLink
+                to="/talent"
+                class="nav-drop-item"
+                :class="{ 'active': $route.path === '/talent' }"
+                role="menuitem"
+                @click="closeAllMenus"
+              >
+                <span>Talent</span>
+                <svg class="drop-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+
         <NuxtLink
-          to="/talent"
+          to="/contact"
           class="nav-item"
-          :class="{ 'active': $route.path === '/talent' }"
+          :class="{ 'active': $route.path === '/contact' }"
         >
-          Talent
+          Contact Us
         </NuxtLink>
       </nav>
 
@@ -71,7 +137,7 @@
         to="/download"
         class="pill-cta-btn"
         aria-label="Download the App"
-        @click="closeMobileMenu"
+        @click="closeAllMenus"
       >
         <span>Download the App</span>
       </NuxtLink>
@@ -112,7 +178,6 @@
               </div>
               <div class="item-text">
                 <span class="item-title">Home</span>
-                <span class="item-desc">Dubai Gateway App Overview</span>
               </div>
             </NuxtLink>
 
@@ -130,7 +195,6 @@
               </div>
               <div class="item-text">
                 <span class="item-title">Solutions</span>
-                <span class="item-desc">Explore, Eat, Stays, Health, Edu</span>
               </div>
             </NuxtLink>
 
@@ -149,7 +213,6 @@
               </div>
               <div class="item-text">
                 <span class="item-title">About</span>
-                <span class="item-desc">DIFC Governance & Verification Trust</span>
               </div>
             </NuxtLink>
 
@@ -167,7 +230,6 @@
               </div>
               <div class="item-text">
                 <span class="item-title">Business</span>
-                <span class="item-desc">Demand Analytics & Verified Membership</span>
               </div>
             </NuxtLink>
 
@@ -177,7 +239,7 @@
               :class="{ 'active': $route.path === '/talent' }"
               @click="closeMobileMenu"
             >
-              <div class="item-icon-box">
+              <div class="item-icon-box gold">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
                   <circle cx="9" cy="7" r="4"></circle>
@@ -186,7 +248,6 @@
               </div>
               <div class="item-text">
                 <span class="item-title">Talent</span>
-                <span class="item-desc">Verified Directory & Moderated Jobs</span>
               </div>
             </NuxtLink>
 
@@ -203,7 +264,6 @@
               </div>
               <div class="item-text">
                 <span class="item-title">Dubai Guide</span>
-                <span class="item-desc">Tolls, Culture, Laws & Blueprints</span>
               </div>
             </a>
 
@@ -220,8 +280,7 @@
                 </svg>
               </div>
               <div class="item-text">
-                <span class="item-title">Contact</span>
-                <span class="item-desc">partners@travelour.com</span>
+                <span class="item-title">Contact Us</span>
               </div>
             </NuxtLink>
           </nav>
@@ -252,6 +311,11 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const isScrolled = ref(false)
 const mobileMenuOpen = ref(false)
+const dropdownOpen = ref(false)
+
+const toggleDropdown = () => {
+  dropdownOpen.value = !dropdownOpen.value
+}
 
 const handleScroll = () => {
   if (typeof window !== 'undefined') {
@@ -267,24 +331,33 @@ const closeMobileMenu = () => {
   mobileMenuOpen.value = false
 }
 
-// Close mobile dropdown on outside click
+const closeAllMenus = () => {
+  closeMobileMenu()
+  dropdownOpen.value = false
+}
+
+// Close dropdown or mobile menu on outside click
 const handleGlobalClick = (event: MouseEvent) => {
   const target = event.target as HTMLElement
   if (mobileMenuOpen.value && !target.closest('.floating-header-wrapper')) {
     closeMobileMenu()
   }
-}
-
-// Close mobile dropdown on ESC key
-const handleKeyDown = (event: KeyboardEvent) => {
-  if (event.key === 'Escape' && mobileMenuOpen.value) {
-    closeMobileMenu()
+  if (dropdownOpen.value && !target.closest('.nav-dropdown-wrapper')) {
+    dropdownOpen.value = false
   }
 }
 
-// Automatically close menu when navigating
+// Close menus on ESC key
+const handleKeyDown = (event: KeyboardEvent) => {
+  if (event.key === 'Escape') {
+    if (dropdownOpen.value) dropdownOpen.value = false
+    if (mobileMenuOpen.value) closeMobileMenu()
+  }
+}
+
+// Automatically close menus when navigating
 watch(() => route.fullPath, () => {
-  closeMobileMenu()
+  closeAllMenus()
 })
 
 onMounted(() => {
@@ -336,7 +409,7 @@ onUnmounted(() => {
 
 @media (min-width: 860px) {
   .floating-navbar {
-    gap: 1.25rem;
+    gap: 1.1rem;
   }
 }
 
@@ -386,7 +459,7 @@ onUnmounted(() => {
 .desktop-nav-links {
   display: none;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
 }
 
 @media (min-width: 860px) {
@@ -401,7 +474,7 @@ onUnmounted(() => {
   font-weight: 480;
   letter-spacing: -0.01em;
   color: #a1a1aa;
-  padding: 0.45rem 0.95rem;
+  padding: 0.45rem 0.9rem;
   border-radius: 9999px;
   transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
   position: relative;
@@ -418,6 +491,147 @@ onUnmounted(() => {
   color: var(--color-butter);
   background: rgba(255, 216, 64, 0.14);
   font-weight: 600;
+}
+
+/* Dropdown Wrapper & Unbreakable Safety Cushion */
+.nav-dropdown-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Generous invisible bridge that prevents cursor departure while traversing to menu */
+.nav-dropdown-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  bottom: -130px;
+  left: -40px;
+  right: -40px;
+  pointer-events: none;
+  z-index: 1040;
+}
+
+.nav-dropdown-wrapper:hover::after,
+.nav-dropdown-wrapper.is-open::after {
+  pointer-events: auto;
+}
+
+.nav-item-dropdown {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.chevron-icon {
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0.7;
+}
+
+.nav-dropdown-wrapper:hover .chevron-icon,
+.nav-dropdown-wrapper.is-open .chevron-icon {
+  opacity: 1;
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-wrapper:hover .nav-item-dropdown,
+.nav-dropdown-wrapper.is-open .nav-item-dropdown {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Minimalist Luxury Dropdown Panel */
+.nav-dropdown-panel {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  padding-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.18s ease;
+  z-index: 1050;
+}
+
+/* Native CSS hover & JS toggle - 100% glitch-free */
+.nav-dropdown-wrapper:hover .nav-dropdown-panel,
+.nav-dropdown-wrapper.is-open .nav-dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Inner styled glass card */
+.nav-dropdown-inner {
+  min-width: 172px;
+  background: rgba(4, 30, 38, 0.96);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(143, 233, 255, 0.2);
+  border-radius: 1rem;
+  box-shadow: 
+    0 20px 40px -8px rgba(2, 20, 26, 0.85),
+    0 6px 16px -2px rgba(2, 20, 26, 0.5),
+    inset 0 1px 0 rgba(143, 233, 255, 0.16);
+  padding: 0.35rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-drop-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+  letter-spacing: -0.01em;
+}
+
+.drop-arrow {
+  opacity: 0.35;
+  transform: translateX(-2px);
+  transition: all 0.18s ease;
+  color: var(--color-sail-light);
+}
+
+.nav-drop-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.nav-drop-item:hover .drop-arrow {
+  opacity: 1;
+  transform: translateX(1px);
+  color: var(--color-butter);
+}
+
+.nav-drop-item.active {
+  background: rgba(255, 216, 64, 0.12);
+  color: var(--color-butter);
+  font-weight: 600;
+}
+
+.nav-drop-item.active .drop-arrow {
+  opacity: 1;
+  color: var(--color-butter);
+}
+
+.nav-drop-divider {
+  height: 1px;
+  background: rgba(143, 233, 255, 0.1);
+  margin: 0.2rem 0.4rem;
 }
 
 /* Butter Pill CTA Button */
@@ -506,7 +720,7 @@ onUnmounted(() => {
   left: 50%;
   transform: translateX(-50%);
   width: calc(100vw - 2rem);
-  max-width: 440px;
+  max-width: 400px;
   pointer-events: auto;
 }
 
@@ -576,10 +790,13 @@ onUnmounted(() => {
   flex-shrink: 0;
 }
 
+.item-icon-box.gold {
+  color: var(--color-butter);
+}
+
 .item-text {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
 }
 
 .item-title {
@@ -588,12 +805,6 @@ onUnmounted(() => {
   font-weight: 500;
   color: #ffffff;
   line-height: 1.2;
-}
-
-.item-desc {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  color: #a1a1aa;
 }
 
 .mobile-dropdown-bottom {
