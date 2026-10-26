@@ -18,15 +18,15 @@
         <!-- Pillar 01: Verified -->
         <div class="pillar-card glass-panel glass-edge">
           <div class="pillar-top-row">
-            <span class="pillar-tag font-mono">VERIFICATION</span>
-            <span class="pillar-num font-mono">01</span>
+            <span class="pillar-tag font-sans">VERIFICATION</span>
+            <span class="pillar-num font-sans">01</span>
           </div>
 
           <h3 class="pillar-title font-display">Verified, Not Scraped</h3>
           <p class="pillar-body font-sans">
             Every business is in a signed legal relationship with Travelour and passes thorough KYC before it goes live. There is no open, unvetted business sign-up. What you see is authentic, active, and verified.
           </p>
-          <div class="pillar-highlight font-mono">
+          <div class="pillar-highlight font-sans">
             <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 100% KYC clearance</span>
             <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero scraped phone numbers</span>
           </div>
@@ -35,15 +35,15 @@
         <!-- Pillar 02: Curated -->
         <div class="pillar-card glass-panel glass-edge">
           <div class="pillar-top-row">
-            <span class="pillar-tag font-mono">CURATION</span>
-            <span class="pillar-num font-mono">02</span>
+            <span class="pillar-tag font-sans">CURATION</span>
+            <span class="pillar-num font-sans">02</span>
           </div>
 
           <h3 class="pillar-title font-display">Human Editorial Verdict</h3>
           <p class="pillar-body font-sans">
             Hidden gems and curated journeys are hand-picked by local editors who live in Dubai. Every listing carries a concise editorial verdict telling you why it stands out and what to expect before you go.
           </p>
-          <div class="pillar-highlight font-mono">
+          <div class="pillar-highlight font-sans">
             <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Unbiased editor notes</span>
             <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Tiered facts: "Good to know"</span>
           </div>
@@ -52,15 +52,15 @@
         <!-- Pillar 03: Know-How -->
         <div class="pillar-card glass-panel glass-edge">
           <div class="pillar-top-row">
-            <span class="pillar-tag font-mono">KNOW-HOW</span>
-            <span class="pillar-num font-mono">03</span>
+            <span class="pillar-tag font-sans">KNOW-HOW</span>
+            <span class="pillar-num font-sans">03</span>
           </div>
 
           <h3 class="pillar-title font-display">How Dubai Actually Works</h3>
           <p class="pillar-body font-sans">
             The Dubai Guide is a handbook, not a person. It demystifies emergency protocols, culture, Salik toll gates, parking SMS zones, tenancy laws, and practical basics of settling in smoothly.
           </p>
-          <div class="pillar-highlight font-mono">
+          <div class="pillar-highlight font-sans">
             <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Official toll & parking codes</span>
             <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Emergency & healthcare laws</span>
           </div>
@@ -69,15 +69,15 @@
         <!-- Pillar 04: Context -->
         <div class="pillar-card glass-panel glass-edge">
           <div class="pillar-top-row">
-            <span class="pillar-tag font-mono">ARRIVAL CONTEXT</span>
-            <span class="pillar-num font-mono">04</span>
+            <span class="pillar-tag font-sans">ARRIVAL CONTEXT</span>
+            <span class="pillar-num font-sans">04</span>
           </div>
 
           <h3 class="pillar-title font-display">Organised Around Arrival</h3>
           <p class="pillar-body font-sans">
             Journeys such as "First 48 Hours", "Medical Trip", and "Moving to Dubai" turn an overwhelming directory into a structured, step-by-step itinerary tailored to your arrival stage.
           </p>
-          <div class="pillar-highlight font-mono">
+          <div class="pillar-highlight font-sans">
             <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Curated 48h arrival path</span>
             <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable settling blueprints</span>
           </div>
@@ -99,7 +99,7 @@
           </p>
         </div>
         <div class="community-action">
-          <NuxtLink to="/about" class="btn-link-gold font-mono">
+          <NuxtLink to="/about" class="btn-link-gold font-sans">
             <span>Read Our Charter</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"></line>

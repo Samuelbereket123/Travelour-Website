@@ -22,7 +22,7 @@
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
           </NuxtLink>
-          <span class="font-mono text-on-sail text-xs font-semibold">$29.00 / 12-MONTH LISTING</span>
+          <span class="font-sans text-on-sail text-xs font-semibold">$29.00 / 12-MONTH LISTING</span>
         </div>
       </div>
     </section>
@@ -32,7 +32,7 @@
       <div class="shell">
         <div class="talent-grid">
           <div class="talent-info-card glass-panel glass-edge">
-            <span class="info-tag font-mono">STEP 01</span>
+            <span class="info-tag font-sans">STEP 01</span>
             <h3 class="info-title font-display">Create Your Profile</h3>
             <p class="info-desc font-sans">
               Enter your professional credentials, portfolio links, UAE residency status, languages, and core specializations across tech, dining, hospitality, healthcare, or corporate sectors.
@@ -40,7 +40,7 @@
           </div>
 
           <div class="talent-info-card glass-panel glass-edge">
-            <span class="info-tag font-mono">STEP 02</span>
+            <span class="info-tag font-sans">STEP 02</span>
             <h3 class="info-title font-display">Native Stripe Flat Fee</h3>
             <p class="info-desc font-sans">
               Pay the transparent flat fee ($29/yr or AED equivalent) directly in the mobile app through Apple Pay, Google Pay, or card. The only money that moves through the product today.
@@ -48,7 +48,7 @@
           </div>
 
           <div class="talent-info-card glass-panel glass-edge">
-            <span class="info-tag font-mono">STEP 03</span>
+            <span class="info-tag font-sans">STEP 03</span>
             <h3 class="info-title font-display">Direct Employer Visibility</h3>
             <p class="info-desc font-sans">
               Once approved, your verified profile appears in the Talent directory. Employers browse, review, and contact you directly via WhatsApp or email with zero recruiter commissions.
@@ -56,7 +56,7 @@
           </div>
 
           <div class="talent-info-card glass-panel glass-edge">
-            <span class="info-tag font-mono">STEP 04</span>
+            <span class="info-tag font-sans">STEP 04</span>
             <h3 class="info-title font-display">Moderated Jobs Feed</h3>
             <p class="info-desc font-sans">
               Browse openings posted directly by Travelour member businesses. Every job post is operator-moderated to ensure verified wages, legal UAE contracts, and zero fake recruitment ads.

@@ -34,7 +34,7 @@
         </svg>
       </NuxtLink>
 
-      <!-- Center: Clean Desktop Navigation Links -->
+      <!-- Center: Clean Desktop Navigation Links (Current List Items) -->
       <nav class="desktop-nav-links" aria-label="Primary navigation">
         <NuxtLink
           to="/solutions"
@@ -43,13 +43,13 @@
         >
           Solutions
         </NuxtLink>
-        <a
-          href="/#guide"
+        <NuxtLink
+          to="/about"
           class="nav-item"
-          :class="{ 'active': $route.hash === '#guide' }"
+          :class="{ 'active': $route.path === '/about' }"
         >
-          Dubai Guide
-        </a>
+          About
+        </NuxtLink>
         <NuxtLink
           to="/business"
           class="nav-item"
@@ -64,24 +64,17 @@
         >
           Talent
         </NuxtLink>
-        <NuxtLink
-          to="/about"
-          class="nav-item"
-          :class="{ 'active': $route.path === '/about' }"
-        >
-          About
-        </NuxtLink>
       </nav>
 
-      <!-- Right: White Pill CTA Button -->
+      <!-- Right: Butter Pill CTA Button -->
       <div class="header-right-action">
         <NuxtLink
           to="/download"
           class="pill-cta-btn"
-          aria-label="Get the Travelour App"
+          aria-label="Download the App"
           @click="closeMobileMenu"
         >
-          <span>Get the App</span>
+          <span>Download the App</span>
         </NuxtLink>
 
         <!-- Mobile Menu Toggle Button -->
@@ -143,60 +136,6 @@
               </div>
             </NuxtLink>
 
-            <a
-              href="/#guide"
-              class="mobile-menu-item"
-              @click="closeMobileMenu"
-            >
-              <div class="item-icon-box">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                </svg>
-              </div>
-              <div class="item-text">
-                <span class="item-title">Dubai Guide</span>
-                <span class="item-desc">Tolls, Culture, Laws & Blueprints</span>
-              </div>
-            </a>
-
-            <NuxtLink
-              to="/business"
-              class="mobile-menu-item"
-              :class="{ 'active': $route.path === '/business' }"
-              @click="closeMobileMenu"
-            >
-              <div class="item-icon-box">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="12" y1="1" x2="12" y2="23"></line>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                </svg>
-              </div>
-              <div class="item-text">
-                <span class="item-title">For Businesses</span>
-                <span class="item-desc">Demand Analytics & Verified Membership</span>
-              </div>
-            </NuxtLink>
-
-            <NuxtLink
-              to="/talent"
-              class="mobile-menu-item"
-              :class="{ 'active': $route.path === '/talent' }"
-              @click="closeMobileMenu"
-            >
-              <div class="item-icon-box">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                </svg>
-              </div>
-              <div class="item-text">
-                <span class="item-title">Talent Hub</span>
-                <span class="item-desc">Verified Directory & Moderated Jobs</span>
-              </div>
-            </NuxtLink>
-
             <NuxtLink
               to="/about"
               class="mobile-menu-item"
@@ -215,6 +154,60 @@
                 <span class="item-desc">DIFC Governance & Verification Trust</span>
               </div>
             </NuxtLink>
+
+            <NuxtLink
+              to="/business"
+              class="mobile-menu-item"
+              :class="{ 'active': $route.path === '/business' }"
+              @click="closeMobileMenu"
+            >
+              <div class="item-icon-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <div class="item-text">
+                <span class="item-title">Business</span>
+                <span class="item-desc">Demand Analytics & Verified Membership</span>
+              </div>
+            </NuxtLink>
+
+            <NuxtLink
+              to="/talent"
+              class="mobile-menu-item"
+              :class="{ 'active': $route.path === '/talent' }"
+              @click="closeMobileMenu"
+            >
+              <div class="item-icon-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                </svg>
+              </div>
+              <div class="item-text">
+                <span class="item-title">Talent</span>
+                <span class="item-desc">Verified Directory & Moderated Jobs</span>
+              </div>
+            </NuxtLink>
+
+            <a
+              href="/#guide"
+              class="mobile-menu-item"
+              @click="closeMobileMenu"
+            >
+              <div class="item-icon-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+              </div>
+              <div class="item-text">
+                <span class="item-title">Dubai Guide</span>
+                <span class="item-desc">Tolls, Culture, Laws & Blueprints</span>
+              </div>
+            </a>
 
             <NuxtLink
               to="/contact"
@@ -241,7 +234,7 @@
               class="btn-full-cta"
               @click="closeMobileMenu"
             >
-              <span>Get the App</span>
+              <span>Download the App</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>

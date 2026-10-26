@@ -23,12 +23,12 @@
               <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
             </svg>
           </div>
-          <span class="dash-tag font-mono">DEMAND FUNNEL</span>
+          <span class="dash-tag font-sans">DEMAND FUNNEL</span>
           <h3 class="dash-card-title font-display">Search to WhatsApp Clicks</h3>
           <p class="dash-card-desc font-sans">
             Live 30-day analytics tracking search impressions, profile opens, and direct contact taps. Know the exact day and time high-intent visitors reach out.
           </p>
-          <ul class="dash-bullets font-mono">
+          <ul class="dash-bullets font-sans">
             <li>Search appearances breakdown</li>
             <li>Direct WhatsApp & Call conversion</li>
             <li>CSV export for internal audits</li>
@@ -43,12 +43,12 @@
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
           </div>
-          <span class="dash-tag font-mono">LEADS & RESERVATIONS</span>
+          <span class="dash-tag font-sans">LEADS & RESERVATIONS</span>
           <h3 class="dash-card-title font-display">Direct Enquiry Inbox</h3>
           <p class="dash-card-desc font-sans">
             Structured lead inbox (New, Responded, Closed). For dining venues: reservations inbox with party sizes, custom blackout dates, and auto-confirm rules.
           </p>
-          <ul class="dash-bullets font-mono">
+          <ul class="dash-bullets font-sans">
             <li>Zero commissions or booking taxes</li>
             <li>Direct customer phone & details</li>
             <li>Custom blackout dates & hours</li>
@@ -64,12 +64,12 @@
               <line x1="16" y1="6" x2="16" y2="22"></line>
             </svg>
           </div>
-          <span class="dash-tag font-mono">GEOFENCED OFFERS</span>
+          <span class="dash-tag font-sans">GEOFENCED OFFERS</span>
           <h3 class="dash-card-title font-display">Proximity Passes</h3>
           <p class="dash-card-desc font-sans">
             Compose targeted promotions with geofence radiuses around Downtown, Marina, or Palm. App raises at most one subtle alert per day when users are nearby.
           </p>
-          <ul class="dash-bullets font-mono">
+          <ul class="dash-bullets font-sans">
             <li>Included ads-credit allowance</li>
             <li>No coupon codes: show digital pass</li>
             <li>Operator moderation quality check</li>
@@ -93,14 +93,14 @@
 
         <div class="pipeline-steps-track">
           <div v-for="(step, idx) in pipelineSteps" :key="step.title" class="pipeline-step-node">
-            <div class="step-num font-mono">0{{ idx + 1 }}</div>
+            <div class="step-num font-sans">0{{ idx + 1 }}</div>
             <div class="step-label font-display">{{ step.title }}</div>
             <div class="step-info font-sans">{{ step.desc }}</div>
           </div>
         </div>
 
         <div class="pipeline-footer-row">
-          <div class="membership-info font-mono">
+          <div class="membership-info font-sans">
             <span class="text-gold">FLAT ANNUAL MEMBERSHIP:</span> Invoiced outside app · Includes listing + monthly ads credit allowance.
           </div>
           <NuxtLink to="/business" class="btn btn-primary">

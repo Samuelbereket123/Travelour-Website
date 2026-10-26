@@ -20,7 +20,7 @@
       <div class="shell">
         <div class="manifesto-grid">
           <div class="manifesto-side old-way glass-panel">
-            <span class="manifesto-tag font-mono">THE OLD WAY</span>
+            <span class="manifesto-tag font-sans">THE OLD WAY</span>
             <h3 class="manifesto-heading font-display">Scraped Maps & Cluttered Feeds</h3>
             <ul class="manifesto-list font-sans">
               <li>Open, unverified business submissions where anyone can post fake numbers</li>
@@ -32,7 +32,7 @@
           </div>
 
           <div class="manifesto-side new-way glass-panel glass-edge">
-            <span class="manifesto-tag-gold font-mono">THE TRAVELOUR WAY</span>
+            <span class="manifesto-tag-gold font-sans">THE TRAVELOUR WAY</span>
             <h3 class="manifesto-heading font-display">Signed Trust & Living Know-How</h3>
             <ul class="manifesto-list font-sans">
               <li>100% of member businesses pass legal KYC review and sign an official agreement</li>
@@ -158,7 +158,7 @@ useHead({
   position: absolute;
   left: 0;
   color: #ff6b6b;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
@@ -167,7 +167,7 @@ useHead({
   position: absolute;
   left: 0;
   color: var(--color-primary);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-weight: 700;
 }
 </style>

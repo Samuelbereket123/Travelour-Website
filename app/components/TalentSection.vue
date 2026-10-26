@@ -17,15 +17,15 @@
           </p>
 
           <div class="pricing-card glass-panel glass-edge">
-            <div class="pricing-badge font-mono">12-MONTH LISTING PASS</div>
+            <div class="pricing-badge font-sans">12-MONTH LISTING PASS</div>
             <div class="pricing-price-row">
               <span class="price-val font-display">$29</span>
-              <span class="price-unit font-mono">/ YEAR (OR AED EQUIVALENT)</span>
+              <span class="price-unit font-sans">/ YEAR (OR AED EQUIVALENT)</span>
             </div>
             <p class="pricing-explainer font-sans">
               Paid securely in the app via native Stripe sheet. No subscription lock-in, no recruiter commissions deducted from your salary.
             </p>
-            <ul class="pricing-perks font-mono">
+            <ul class="pricing-perks font-sans">
               <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Verified profile badge & direct employer reach</li>
               <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Access to moderated, verified Dubai job openings</li>
               <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Direct WhatsApp & email contact from hiring managers</li>
@@ -40,14 +40,14 @@
         <div class="talent-right-col">
           <div class="audience-card glass-panel">
             <div class="audience-header">
-              <span class="audience-tag font-mono">FOR PROFESSIONALS</span>
-              <span class="audience-num font-mono">01</span>
+              <span class="audience-tag font-sans">FOR PROFESSIONALS</span>
+              <span class="audience-num font-sans">01</span>
             </div>
             <h3 class="audience-title font-display">Get Discovered By Licensed UAE Employers</h3>
             <p class="audience-body font-sans">
               Create your verified profile with portfolio highlights, certifications, and visa availability. When employers search your vertical, they connect with you directly.
             </p>
-            <div class="audience-tags font-mono">
+            <div class="audience-tags font-sans">
               <span>Software & Tech</span>
               <span>Hospitality & Chefs</span>
               <span>Healthcare & Doctors</span>
@@ -57,14 +57,14 @@
 
           <div class="audience-card glass-panel">
             <div class="audience-header">
-              <span class="audience-tag font-mono">FOR EMPLOYERS</span>
-              <span class="audience-num font-mono">02</span>
+              <span class="audience-tag font-sans">FOR EMPLOYERS</span>
+              <span class="audience-num font-sans">02</span>
             </div>
             <h3 class="audience-title font-display">Search Verified Talent & Post Moderated Jobs</h3>
             <p class="audience-body font-sans">
               Member businesses get full talent search as a member perk. Post openings to a moderated jobs feed that reaches active, verified candidates already in or relocating to Dubai.
             </p>
-            <div class="audience-tags font-mono">
+            <div class="audience-tags font-sans">
               <span>Zero Placement Cut</span>
               <span>Operator Moderation</span>
               <span>Instant Contact</span>

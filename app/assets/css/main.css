@@ -56,10 +56,10 @@
   --color-line: rgba(143, 233, 255, 0.14);
   --color-line-subtle: rgba(143, 233, 255, 0.08);
   
-  /* DM Sans for display + body */
+  /* DM Sans for display + body + UI */
   --font-display: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-mono: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
   /* Shell & Spacing */
   --max-shell: 82rem;
@@ -134,7 +134,7 @@ img, video {
 
 .font-display { font-family: var(--font-display); }
 .font-sans { font-family: var(--font-sans); }
-.font-mono { font-family: var(--font-mono); }
+.font-mono { font-family: var(--font-sans); }
 
 .gold-text-gradient,
 .butter-text-gradient {
@@ -154,10 +154,11 @@ img, video {
 }
 
 .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.28em;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  font-weight: 700;
   color: var(--color-primary);
   display: inline-flex;
   align-items: center;
@@ -353,11 +354,11 @@ img, video {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
+  text-transform: none;
+  letter-spacing: 0.01em;
   padding: 0.875rem 1.75rem;
   border-radius: var(--radius-pill);
   transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -407,11 +408,11 @@ img, video {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
+  text-transform: none;
+  letter-spacing: 0.01em;
   padding: 0.875rem 1.75rem;
   border-radius: var(--radius-pill);
   transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -454,10 +455,11 @@ img, video {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
   color: var(--color-foreground);
   border-bottom: 1px solid var(--color-primary);
   padding-bottom: 2px;
@@ -572,10 +574,11 @@ img, video {
 
 .metric-label {
   margin-top: 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
+  font-weight: 600;
   color: var(--color-muted-foreground);
 }
 

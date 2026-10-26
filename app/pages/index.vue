@@ -9,17 +9,8 @@
     <!-- High-Contrast Editorial Paper Section: The 6 Verticals -->
     <ServicesSection />
 
-    <!-- Trust & Why Travelour Wins over Google Maps -->
-    <TrustSection />
-
     <!-- The Dubai Guidebook & Curated Journeys -->
     <DubaiGuideSection />
-
-    <!-- The Business Dashboard & Invite-Only Onboarding -->
-    <BusinessDashboardSection />
-
-    <!-- Talent Directory & Moderated Jobs Board -->
-    <TalentSection />
 
     <!-- Download & Partner CTA Banner -->
     <DownloadCtaSection />

@@ -20,7 +20,7 @@
             v-for="v in verticalList"
             :key="v.id"
             type="button"
-            class="filter-pill font-mono"
+            class="filter-pill font-sans"
             :class="{ 'active': selectedVertical === v.id }"
             @click="selectedVertical = v.id"
           >
@@ -46,7 +46,7 @@
             </div>
 
             <div class="vert-text-side">
-              <div class="vert-num-row font-mono">
+              <div class="vert-num-row font-sans">
                 <span class="vert-num">0{{ idx + 1 }}</span>
                 <span class="vert-category-tag">{{ vert.category }}</span>
               </div>
@@ -55,12 +55,12 @@
               <p class="vert-desc font-sans">{{ vert.description }}</p>
 
               <div class="vert-custom-block glass-panel">
-                <span class="custom-block-label font-mono">VERTICAL-SPECIFIC DATA BLOCK</span>
+                <span class="custom-block-label font-sans">VERTICAL-SPECIFIC DATA BLOCK</span>
                 <p class="custom-block-text font-sans"><strong>{{ vert.blockName }}:</strong> {{ vert.blockDetails }}</p>
               </div>
 
               <div class="vert-features-grid font-sans">
-                <div v-for="feat in vert.features" :key="feat" class="feat-item font-mono">
+                <div v-for="feat in vert.features" :key="feat" class="feat-item font-sans">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
@@ -72,7 +72,7 @@
                 <NuxtLink to="/download" class="btn btn-primary">
                   <span>Explore in App</span>
                 </NuxtLink>
-                <NuxtLink to="/business" class="btn-link-gold font-mono">
+                <NuxtLink to="/business" class="btn-link-gold font-sans">
                   <span>List Your Venue Here</span>
                 </NuxtLink>
               </div>

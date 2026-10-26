@@ -33,12 +33,12 @@
         <div class="deep-dive-grid">
           <!-- Item 1: Demand Band -->
           <div class="dive-card glass-panel glass-edge">
-            <span class="dive-tag font-mono">01 · ANALYTICS</span>
+            <span class="dive-tag font-sans">01 · ANALYTICS</span>
             <h3 class="dive-title font-display">The Demand Band</h3>
             <p class="dive-desc font-sans">
               Track search appearances, listing views, and high-intent contact clicks with a 30-day trend. You know exactly which arrivals are exploring your menu, rates, or clinic roster.
             </p>
-            <div class="dive-metric font-mono">
+            <div class="dive-metric font-sans">
               <span class="metric-accent">100% Measurable</span>
               <span>Direct WhatsApp & Call Logging</span>
             </div>
@@ -46,12 +46,12 @@
 
           <!-- Item 2: Leads & Reservations -->
           <div class="dive-card glass-panel glass-edge">
-            <span class="dive-tag font-mono">02 · ENQUIRIES</span>
+            <span class="dive-tag font-sans">02 · ENQUIRIES</span>
             <h3 class="dive-title font-display">Leads & Reservations Inbox</h3>
             <p class="dive-desc font-sans">
               An organized enquiry inbox (New, Responded, Closed). For restaurants: a full reservations inbox with rules for seating hours, party size thresholds, blackout dates, and auto-confirm.
             </p>
-            <div class="dive-metric font-mono">
+            <div class="dive-metric font-sans">
               <span class="metric-accent">Zero Commission</span>
               <span>Direct Customer Relationship</span>
             </div>
@@ -59,12 +59,12 @@
 
           <!-- Item 3: Geofenced Offers -->
           <div class="dive-card glass-panel glass-edge">
-            <span class="dive-tag font-mono">03 · PROXIMITY</span>
+            <span class="dive-tag font-sans">03 · PROXIMITY</span>
             <h3 class="dive-title font-display">Geofenced Offers</h3>
             <p class="dive-desc font-sans">
               Compose targeted venue passes with custom geofences and schedules. The app raises a subtle notification when verified users are near your venue. No discount codes needed. Users simply show the pass.
             </p>
-            <div class="dive-metric font-mono">
+            <div class="dive-metric font-sans">
               <span class="metric-accent">Ad Credits Included</span>
               <span>1 Local Alert / Day Limit</span>
             </div>
@@ -72,12 +72,12 @@
 
           <!-- Item 4: Hiring & Jobs -->
           <div class="dive-card glass-panel glass-edge">
-            <span class="dive-tag font-mono">04 · RECRUITMENT</span>
+            <span class="dive-tag font-sans">04 · RECRUITMENT</span>
             <h3 class="dive-title font-display">Talent Search & Job Board</h3>
             <p class="dive-desc font-sans">
               Member businesses search verified talent and post moderated jobs as an included perk. Tap directly into candidates who have verified credentials and are ready to work in Dubai.
             </p>
-            <div class="dive-metric font-mono">
+            <div class="dive-metric font-sans">
               <span class="metric-accent">No Agency Fees</span>
               <span>Verified Candidates Only</span>
             </div>
@@ -101,7 +101,7 @@
           <form class="application-form" @submit.prevent="submitForm">
             <div class="form-grid">
               <div class="form-field">
-                <label class="form-label font-mono">BUSINESS NAME</label>
+                <label class="form-label font-sans">BUSINESS NAME</label>
                 <input
                   v-model="form.businessName"
                   type="text"
@@ -112,8 +112,8 @@
               </div>
 
               <div class="form-field">
-                <label class="form-label font-mono">PRIMARY VERTICAL</label>
-                <select v-model="form.vertical" class="form-select font-mono" required>
+                <label class="form-label font-sans">PRIMARY VERTICAL</label>
+                <select v-model="form.vertical" class="form-select font-sans" required>
                   <option value="" disabled selected>Select Vertical</option>
                   <option value="eat">Eat (Restaurant / Café / Dining)</option>
                   <option value="stays">Stays (Hotel / Serviced Apartment)</option>
@@ -124,7 +124,7 @@
               </div>
 
               <div class="form-field">
-                <label class="form-label font-mono">CONTACT PERSON NAME</label>
+                <label class="form-label font-sans">CONTACT PERSON NAME</label>
                 <input
                   v-model="form.contactName"
                   type="text"
@@ -135,7 +135,7 @@
               </div>
 
               <div class="form-field">
-                <label class="form-label font-mono">WORK EMAIL</label>
+                <label class="form-label font-sans">WORK EMAIL</label>
                 <input
                   v-model="form.email"
                   type="email"
@@ -146,7 +146,7 @@
               </div>
 
               <div class="form-field">
-                <label class="form-label font-mono">PHONE / WHATSAPP NUMBER</label>
+                <label class="form-label font-sans">PHONE / WHATSAPP NUMBER</label>
                 <input
                   v-model="form.phone"
                   type="tel"
@@ -157,7 +157,7 @@
               </div>
 
               <div class="form-field">
-                <label class="form-label font-mono">DUBAI NEIGHBOURHOOD / LOCATION</label>
+                <label class="form-label font-sans">DUBAI NEIGHBOURHOOD / LOCATION</label>
                 <input
                   v-model="form.location"
                   type="text"
@@ -178,7 +178,7 @@
                   Application Received
                 </span>
               </button>
-              <span v-if="submitted" class="success-msg font-mono">
+              <span v-if="submitted" class="success-msg font-sans">
                 Thank you! A Travelour operator will review your application and reach out shortly.
               </span>
             </div>

@@ -24,7 +24,7 @@
             :class="{ 'active': activeTab === index }"
             @click="activeTab = index"
           >
-            <span class="tab-index font-mono">0{{ index + 1 }}</span>
+            <span class="tab-index font-sans">0{{ index + 1 }}</span>
             <span class="tab-title">{{ tab.title }}</span>
           </button>
         </div>
@@ -34,10 +34,10 @@
       <div class="guide-content-panel glass-panel glass-edge">
         <div class="panel-header-row">
           <div class="panel-title-group">
-            <span class="panel-category-pill font-mono">{{ guideTabs[activeTab].badge }}</span>
+            <span class="panel-category-pill font-sans">{{ guideTabs[activeTab].badge }}</span>
             <h3 class="panel-title font-display">{{ guideTabs[activeTab].heading }}</h3>
           </div>
-          <NuxtLink to="/solutions" class="btn-link-gold font-mono">
+          <NuxtLink to="/solutions" class="btn-link-gold font-sans">
             <span>Read All Guide Articles</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -55,10 +55,10 @@
             :key="i"
             class="guide-item-card"
           >
-            <div class="item-tag font-mono">{{ item.tag }}</div>
+            <div class="item-tag font-sans">{{ item.tag }}</div>
             <h4 class="item-title font-display">{{ item.title }}</h4>
             <p class="item-detail font-sans">{{ item.detail }}</p>
-            <div v-if="item.action" class="item-action font-mono">
+            <div v-if="item.action" class="item-action font-sans">
               <span>{{ item.action }}</span>
             </div>
           </div>
@@ -78,14 +78,14 @@
 
         <div class="journeys-cards-grid">
           <div v-for="journey in journeys" :key="journey.title" class="journey-card glass-panel">
-            <div class="journey-meta font-mono">
+            <div class="journey-meta font-sans">
               <span class="journey-duration">{{ journey.duration }}</span>
               <span class="journey-stops">{{ journey.stops }}</span>
             </div>
             <h4 class="journey-title font-display">{{ journey.title }}</h4>
             <p class="journey-desc font-sans">{{ journey.description }}</p>
             <div class="journey-tags">
-              <span v-for="tag in journey.tags" :key="tag" class="journey-pill font-mono">{{ tag }}</span>
+              <span v-for="tag in journey.tags" :key="tag" class="journey-pill font-sans">{{ tag }}</span>
             </div>
           </div>
         </div>

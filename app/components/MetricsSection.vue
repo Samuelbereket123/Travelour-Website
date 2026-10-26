@@ -11,9 +11,9 @@
         <div v-for="metric in metrics" :key="metric.label" class="metric-item">
           <div class="metric-num-wrap">
             <span class="metric-num font-display">{{ metric.value }}</span>
-            <span v-if="metric.suffix" class="metric-suffix font-mono">{{ metric.suffix }}</span>
+            <span v-if="metric.suffix" class="metric-suffix font-sans">{{ metric.suffix }}</span>
           </div>
-          <span class="metric-label font-mono">{{ metric.label }}</span>
+          <span class="metric-label font-sans">{{ metric.label }}</span>
         </div>
       </div>
     </div>
@@ -114,9 +114,10 @@ const metrics = [
 
 .metric-label {
   margin-top: 0.75rem;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
+  font-weight: 550;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   color: var(--color-muted-foreground);
 }
 </style>

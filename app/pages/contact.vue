@@ -24,16 +24,16 @@
             <form @submit.prevent="sendMessage">
               <div class="form-inputs">
                 <div class="input-wrap">
-                  <label class="input-label font-mono">YOUR FULL NAME</label>
+                  <label class="input-label font-sans">YOUR FULL NAME</label>
                   <input v-model="name" type="text" placeholder="Mohammed / Sarah" class="text-input" required />
                 </div>
                 <div class="input-wrap">
-                  <label class="input-label font-mono">EMAIL ADDRESS</label>
+                  <label class="input-label font-sans">EMAIL ADDRESS</label>
                   <input v-model="email" type="email" placeholder="name@company.com" class="text-input" required />
                 </div>
                 <div class="input-wrap">
-                  <label class="input-label font-mono">TOPIC</label>
-                  <select v-model="topic" class="text-select font-mono" required>
+                  <label class="input-label font-sans">TOPIC</label>
+                  <select v-model="topic" class="text-select font-sans" required>
                     <option value="" disabled selected>Select Inquiry Type</option>
                     <option value="partnership">Business Partnership & Membership</option>
                     <option value="talent">Talent Hub & Recruitment Inquiries</option>
@@ -43,7 +43,7 @@
                   </select>
                 </div>
                 <div class="input-wrap">
-                  <label class="input-label font-mono">MESSAGE</label>
+                  <label class="input-label font-sans">MESSAGE</label>
                   <textarea v-model="message" rows="4" placeholder="Tell us about your business or inquiry..." class="text-textarea" required></textarea>
                 </div>
               </div>
@@ -62,7 +62,7 @@
           <!-- Contact Details Right -->
           <div class="contact-info-col">
             <div class="info-box glass-panel">
-              <span class="info-label font-mono">DUBAI HEADQUARTERS</span>
+              <span class="info-label font-sans">DUBAI HEADQUARTERS</span>
               <h4 class="info-value font-display">Travelour Digital LLC</h4>
               <p class="info-sub font-sans">
                 DIFC Innovation Hub, Gate Avenue<br />
@@ -72,14 +72,14 @@
             </div>
 
             <div class="info-box glass-panel">
-              <span class="info-label font-mono">DIRECT INBOXES</span>
-              <p class="contact-line font-mono"><span>PARTNERSHIPS:</span> partners@travelour.com</p>
-              <p class="contact-line font-mono"><span>TALENT:</span> talent@travelour.com</p>
-              <p class="contact-line font-mono"><span>SUPPORT:</span> care@travelour.com</p>
+              <span class="info-label font-sans">DIRECT INBOXES</span>
+              <p class="contact-line font-sans"><span>PARTNERSHIPS:</span> partners@travelour.com</p>
+              <p class="contact-line font-sans"><span>TALENT:</span> talent@travelour.com</p>
+              <p class="contact-line font-sans"><span>SUPPORT:</span> care@travelour.com</p>
             </div>
 
             <div class="info-box glass-panel">
-              <span class="info-label font-mono">OFFICE HOURS</span>
+              <span class="info-label font-sans">OFFICE HOURS</span>
               <p class="info-sub font-sans">
                 Monday to Friday: 9:00 AM to 6:00 PM GST<br />
                 Urgent operator response: 24/7 on designated member lines

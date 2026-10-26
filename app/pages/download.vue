@@ -23,7 +23,7 @@
               </svg>
             </div>
             <h3 class="platform-name font-display">Apple iOS</h3>
-            <p class="platform-req font-mono">REQUIRES iOS 16.0 OR LATER</p>
+            <p class="platform-req font-sans">REQUIRES iOS 16.0 OR LATER</p>
             <p class="platform-desc font-sans">
               Optimized for iPhone with Apple Pay for Talent checkout and native push alerts for live geofenced passes.
             </p>
@@ -44,7 +44,7 @@
               </svg>
             </div>
             <h3 class="platform-name font-display">Google Play</h3>
-            <p class="platform-req font-mono">REQUIRES ANDROID 10.0 OR LATER</p>
+            <p class="platform-req font-sans">REQUIRES ANDROID 10.0 OR LATER</p>
             <p class="platform-desc font-sans">
               Fast, battery-optimized foreground location checks ensuring zero unnecessary background drain.
             </p>
@@ -67,7 +67,7 @@
               </svg>
             </div>
             <h3 class="platform-name font-display">Instant Web App</h3>
-            <p class="platform-req font-mono">RUNS ON ANY MODERN BROWSER</p>
+            <p class="platform-req font-sans">RUNS ON ANY MODERN BROWSER</p>
             <p class="platform-desc font-sans">
               Instant web access without installing an app file. Perfect for tourists booking from desktop or hotel Wi-Fi.
             </p>
@@ -81,7 +81,7 @@
           </div>
         </div>
 
-        <div v-if="toastMessage" class="toast-popup font-mono">
+        <div v-if="toastMessage" class="toast-popup font-sans">
           {{ toastMessage }}
         </div>
       </div>

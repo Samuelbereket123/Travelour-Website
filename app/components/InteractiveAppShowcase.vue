@@ -34,7 +34,7 @@
               @click="activeViewMode = 'listing'"
             >
               <span>Verified Listing Detail</span>
-              <span class="view-tag-gold font-mono">LIVE PREVIEW</span>
+              <span class="view-tag-gold font-sans">LIVE PREVIEW</span>
             </button>
           </div>
 
@@ -48,12 +48,12 @@
               @click="currentAppTab = i"
             >
               <div class="tab-card-header">
-                <span class="tab-number font-mono">0{{ i + 1 }}</span>
+                <span class="tab-number font-sans">0{{ i + 1 }}</span>
                 <h4 class="tab-name font-display">{{ tab.name }} Tab</h4>
                 <span v-if="currentAppTab === i" class="tab-indicator-dot"></span>
               </div>
               <p class="tab-summary font-sans">{{ tab.description }}</p>
-              <div class="tab-elements font-mono">
+              <div class="tab-elements font-sans">
                 <span v-for="elem in tab.elements" :key="elem" class="elem-chip">
                   {{ elem }}
                 </span>
@@ -113,7 +113,7 @@
               <!-- If viewing Tabs -->
               <div v-if="activeViewMode === 'tabs'" class="phone-screen-tabs">
                 <!-- Status bar -->
-                <div class="mock-status-bar font-mono">
+                <div class="mock-status-bar font-sans">
                   <span>9:41</span>
                   <span>5G · 100%</span>
                 </div>
@@ -121,7 +121,7 @@
                 <!-- Tab 1: Home -->
                 <div v-if="currentAppTab === 0" class="tab-screen-body">
                   <div class="mock-hero">
-                    <span class="mock-tag font-mono">DUBAI GATEWAY</span>
+                    <span class="mock-tag font-sans">DUBAI GATEWAY</span>
                     <h5 class="mock-title font-display">Welcome to Dubai</h5>
                     <div class="mock-search-bar">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a0a6b5" stroke-width="2">
@@ -133,44 +133,44 @@
                   </div>
 
                   <!-- 3x2 Verticals Grid -->
-                  <div class="mock-section-title font-mono">EXPLORE VERTICALS</div>
+                  <div class="mock-section-title font-sans">EXPLORE VERTICALS</div>
                   <div class="mock-verticals-grid">
                     <div class="mock-grid-btn">
-                      <span class="grid-num font-mono">01</span>
+                      <span class="grid-num font-sans">01</span>
                       <span>Explore</span>
                     </div>
                     <div class="mock-grid-btn">
-                      <span class="grid-num font-mono">02</span>
+                      <span class="grid-num font-sans">02</span>
                       <span>Eat</span>
                     </div>
                     <div class="mock-grid-btn">
-                      <span class="grid-num font-mono">03</span>
+                      <span class="grid-num font-sans">03</span>
                       <span>Stays</span>
                     </div>
                     <div class="mock-grid-btn">
-                      <span class="grid-num font-mono">04</span>
+                      <span class="grid-num font-sans">04</span>
                       <span>Health</span>
                     </div>
                     <div class="mock-grid-btn">
-                      <span class="grid-num font-mono">05</span>
+                      <span class="grid-num font-sans">05</span>
                       <span>Education</span>
                     </div>
                     <div class="mock-grid-btn">
-                      <span class="grid-num font-mono">06</span>
+                      <span class="grid-num font-sans">06</span>
                       <span>Talent</span>
                     </div>
                   </div>
 
                   <!-- Popular Rail -->
-                  <div class="mock-section-title font-mono">POPULAR VERIFIED</div>
+                  <div class="mock-section-title font-sans">POPULAR VERIFIED</div>
                   <div class="mock-horizontal-cards">
                     <div class="mock-h-card">
-                      <div class="h-card-badge font-mono">VERIFIED</div>
+                      <div class="h-card-badge font-sans">VERIFIED</div>
                       <div class="h-card-name">Zuma Dubai</div>
                       <div class="h-card-sub">DIFC · Japanese Dining</div>
                     </div>
                     <div class="mock-h-card">
-                      <div class="h-card-badge font-mono">HOTEL</div>
+                      <div class="h-card-badge font-sans">HOTEL</div>
                       <div class="h-card-name">The Lana</div>
                       <div class="h-card-sub">Marasi Bay Marina</div>
                     </div>
@@ -180,7 +180,7 @@
                 <!-- Tab 2: Guide -->
                 <div v-else-if="currentAppTab === 1" class="tab-screen-body">
                   <div class="mock-header-pill">
-                    <span class="font-mono text-gold text-xs">DUBAI HANDBOOK</span>
+                    <span class="font-sans text-gold text-xs">DUBAI HANDBOOK</span>
                   </div>
                   <div class="guide-subject-chips">
                     <span class="active">Emergency</span>
@@ -190,12 +190,12 @@
                   </div>
                   <div class="mock-card-list">
                     <div class="mock-guide-card">
-                      <div class="guide-badge font-mono">CRITICAL</div>
+                      <div class="guide-badge font-sans">CRITICAL</div>
                       <div class="guide-title font-display">Emergency Response 999 & 998</div>
                       <div class="guide-excerpt">Instant GPS dispatch protocols across Dubai.</div>
                     </div>
                     <div class="mock-guide-card">
-                      <div class="guide-badge font-mono">DRIVING</div>
+                      <div class="guide-badge font-sans">DRIVING</div>
                       <div class="guide-title font-display">Salik RFID & SMS Parking</div>
                       <div class="guide-excerpt">Gate fee breakdown and 7275 SMS parking codes.</div>
                     </div>
@@ -205,38 +205,38 @@
                 <!-- Tab 3: Offers -->
                 <div v-else-if="currentAppTab === 2" class="tab-screen-body">
                   <div class="mock-header-pill">
-                    <span class="font-mono text-emerald text-xs">GEOFENCED PASSES</span>
+                    <span class="font-sans text-emerald text-xs">GEOFENCED PASSES</span>
                   </div>
                   <div class="mock-offer-pass glass-edge">
-                    <div class="pass-tag font-mono">SHOW AT VENUE · NO CODES</div>
+                    <div class="pass-tag font-sans">SHOW AT VENUE · NO CODES</div>
                     <div class="pass-venue">CÉ LA VI Dubai</div>
                     <div class="pass-benefit">Complimentary Chef's Dessert with Dinner</div>
-                    <div class="pass-status font-mono"><span class="pulse-emerald-dot"></span>PASS ACTIVE NOW</div>
+                    <div class="pass-status font-sans"><span class="pulse-emerald-dot"></span>PASS ACTIVE NOW</div>
                   </div>
                   <div class="mock-offer-pass">
-                    <div class="pass-tag font-mono">MEMBER BENEFIT</div>
+                    <div class="pass-tag font-sans">MEMBER BENEFIT</div>
                     <div class="pass-venue">Talise Spa Madinat</div>
                     <div class="pass-benefit">20% Weekday Hydrotherapy Experience</div>
-                    <div class="pass-status font-mono">AVAILABLE 10AM - 6PM</div>
+                    <div class="pass-status font-sans">AVAILABLE 10AM - 6PM</div>
                   </div>
                 </div>
 
                 <!-- Tab 4: Saved -->
                 <div v-else-if="currentAppTab === 3" class="tab-screen-body">
                   <div class="mock-header-pill">
-                    <span class="font-mono text-gold text-xs">DEVICE SAVED PLACES</span>
+                    <span class="font-sans text-gold text-xs">DEVICE SAVED PLACES</span>
                   </div>
                   <div class="saved-item-row">
                     <div class="saved-title">Alserkal Avenue Galleries</div>
-                    <div class="saved-tag font-mono">Explore · Al Quoz</div>
+                    <div class="saved-tag font-sans">Explore · Al Quoz</div>
                   </div>
                   <div class="saved-item-row">
                     <div class="saved-title">Dr. Sophia Al-Khatib</div>
-                    <div class="saved-tag font-mono">Health · Cardiology DHA</div>
+                    <div class="saved-tag font-sans">Health · Cardiology DHA</div>
                   </div>
                   <div class="saved-item-row">
                     <div class="saved-title">Nord Anglia International</div>
-                    <div class="saved-tag font-mono">Education · Al Barsha</div>
+                    <div class="saved-tag font-sans">Education · Al Barsha</div>
                   </div>
                 </div>
 
@@ -245,9 +245,9 @@
                   <div class="profile-avatar-wrap">
                     <div class="profile-avatar">MA</div>
                     <div class="profile-name font-display">Mohammed Al Maktoum</div>
-                    <div class="profile-role font-mono">RESIDENT · TALENT MEMBER</div>
+                    <div class="profile-role font-sans">RESIDENT · TALENT MEMBER</div>
                   </div>
-                  <div class="profile-actions-list font-mono">
+                  <div class="profile-actions-list font-sans">
                     <div class="profile-row"><span>Verified Talent Profile</span><span class="talent-active-tag">ACTIVE</span></div>
                     <div class="profile-row"><span>Moderated Jobs Feed</span><span>14 New</span></div>
                     <div class="profile-row"><span>App Settings</span><span>→</span></div>
@@ -281,7 +281,7 @@
 
               <!-- If viewing Listing Detail View -->
               <div v-else class="phone-screen-listing">
-                <div class="mock-status-bar font-mono">
+                <div class="mock-status-bar font-sans">
                   <span>9:41</span>
                   <span>5G · 100%</span>
                 </div>
@@ -293,11 +293,11 @@
 
                 <div class="listing-mock-body">
                   <h4 class="detail-title font-display">L'Ami Dave Dubai</h4>
-                  <p class="detail-category font-mono">EAT · FRENCH FINE DINING · DOWNTOWN</p>
+                  <p class="detail-category font-sans">EAT · FRENCH FINE DINING · DOWNTOWN</p>
 
                   <!-- Editorial Verdict -->
                   <div class="verdict-card glass-panel">
-                    <span class="verdict-label font-mono">EDITORIAL VERDICT</span>
+                    <span class="verdict-label font-sans">EDITORIAL VERDICT</span>
                     <p class="verdict-quote font-sans">
                       "Exceptional classic French cuisine overlooking the Dubai Opera. Quiet, intimate, and consistently brilliant."
                     </p>
@@ -306,28 +306,28 @@
                   <!-- Tiered Facts -->
                   <div class="tiered-facts-block font-sans">
                     <div class="fact-row">
-                      <span class="fact-label font-mono">ESSENTIALS</span>
+                      <span class="fact-label font-sans">ESSENTIALS</span>
                       <span class="fact-val">Daily 12:00 PM to 11:30 PM · Valet Available</span>
                     </div>
                     <div class="fact-row">
-                      <span class="fact-label font-mono">STAND OUT</span>
+                      <span class="fact-label font-sans">STAND OUT</span>
                       <span class="fact-val">Private dining room for 14 · Sommelier pairing</span>
                     </div>
                     <div class="fact-row">
-                      <span class="fact-label font-mono">GOOD TO KNOW</span>
+                      <span class="fact-label font-sans">GOOD TO KNOW</span>
                       <span class="fact-val">Smart elegant dress code · Advance booking advised</span>
                     </div>
                   </div>
 
                   <!-- Sticky Action Bar -->
                   <div class="mock-contact-bar">
-                    <button type="button" class="action-btn-whatsapp font-mono">
+                    <button type="button" class="action-btn-whatsapp font-sans">
                       <span>WhatsApp</span>
                     </button>
-                    <button type="button" class="action-btn-call font-mono">
+                    <button type="button" class="action-btn-call font-sans">
                       <span>Call</span>
                     </button>
-                    <button type="button" class="action-btn-enquire font-mono">
+                    <button type="button" class="action-btn-enquire font-sans">
                       <span>Enquire</span>
                     </button>
                   </div>
@@ -460,10 +460,11 @@ const appTabs = [
   gap: 0.5rem;
   padding: 0.65rem 1.4rem;
   border-radius: var(--radius-pill);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.01em;
   color: var(--color-muted-foreground);
   transition: all 0.2s ease;
 }
@@ -778,8 +779,9 @@ const appTabs = [
   border-top: 1px solid rgba(143, 233, 255, 0.12);
   background: #062b36;
   padding: 0.5rem 0;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
 }
 
 .nav-tab-item {

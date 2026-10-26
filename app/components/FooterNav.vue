@@ -15,7 +15,7 @@
             The Dubai gateway app. Giving visitors, new arrivals, and residents one trusted place to find verified businesses and talent, learn how the city works, and contact the right people directly.
           </p>
 
-          <div class="location-badge font-mono">
+          <div class="location-badge font-sans">
             <span class="pulse-emerald"></span>
             <span>DIFC, Dubai, United Arab Emirates</span>
           </div>
@@ -23,7 +23,7 @@
 
         <!-- Col 1: Verticals -->
         <div class="footer-nav-col">
-          <h4 class="footer-col-title font-mono">SIX VERTICALS</h4>
+          <h4 class="footer-col-title font-sans">SIX VERTICALS</h4>
           <ul class="footer-links-list font-sans">
             <li><NuxtLink to="/solutions#explore">Explore (Tours & Malls)</NuxtLink></li>
             <li><NuxtLink to="/solutions#eat">Eat (Menus & WhatsApp)</NuxtLink></li>
@@ -36,7 +36,7 @@
 
         <!-- Col 2: The Guide -->
         <div class="footer-nav-col">
-          <h4 class="footer-col-title font-mono">DUBAI GUIDEBOOK</h4>
+          <h4 class="footer-col-title font-sans">DUBAI GUIDEBOOK</h4>
           <ul class="footer-links-list font-sans">
             <li><a href="/#guide">Emergency Numbers (999/998)</a></li>
             <li><a href="/#guide">Salik Tolls & SMS Parking</a></li>
@@ -49,7 +49,7 @@
 
         <!-- Col 3: Businesses & Talent -->
         <div class="footer-nav-col">
-          <h4 class="footer-col-title font-mono">BUSINESS & PLATFORM</h4>
+          <h4 class="footer-col-title font-sans">BUSINESS & PLATFORM</h4>
           <ul class="footer-links-list font-sans">
             <li><NuxtLink to="/business">Business Membership</NuxtLink></li>
             <li><NuxtLink to="/business">Demand Analytics Dashboard</NuxtLink></li>
@@ -63,10 +63,10 @@
 
       <!-- Footer Bottom -->
       <div class="footer-bottom-bar">
-        <div class="copyright font-mono">
+        <div class="copyright font-sans">
           © 2026 Travelour Digital LLC. All rights reserved. The Dubai Gateway App.
         </div>
-        <div class="legal-links font-mono">
+        <div class="legal-links font-sans">
           <NuxtLink to="/about">Privacy Policy</NuxtLink>
           <NuxtLink to="/about">Terms of Service</NuxtLink>
           <NuxtLink to="/about">KYC Compliance</NuxtLink>
@@ -132,9 +132,10 @@
 }
 
 .brand-tag {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.22em;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
   color: var(--color-primary);
   text-transform: uppercase;
 }
