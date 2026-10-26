@@ -67,29 +67,27 @@
       </nav>
 
       <!-- Right: Butter Pill CTA Button -->
-      <div class="header-right-action">
-        <NuxtLink
-          to="/download"
-          class="pill-cta-btn"
-          aria-label="Download the App"
-          @click="closeMobileMenu"
-        >
-          <span>Download the App</span>
-        </NuxtLink>
+      <NuxtLink
+        to="/download"
+        class="pill-cta-btn"
+        aria-label="Download the App"
+        @click="closeMobileMenu"
+      >
+        <span>Download the App</span>
+      </NuxtLink>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button
-          type="button"
-          class="mobile-menu-trigger"
-          :class="{ 'active': mobileMenuOpen }"
-          :aria-expanded="mobileMenuOpen"
-          aria-label="Toggle navigation menu"
-          @click="toggleMobileMenu"
-        >
-          <span class="hamburger-bar top"></span>
-          <span class="hamburger-bar bottom"></span>
-        </button>
-      </div>
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        type="button"
+        class="mobile-menu-trigger"
+        :class="{ 'active': mobileMenuOpen }"
+        :aria-expanded="mobileMenuOpen"
+        aria-label="Toggle navigation menu"
+        @click="toggleMobileMenu"
+      >
+        <span class="hamburger-bar top"></span>
+        <span class="hamburger-bar bottom"></span>
+      </button>
     </div>
 
     <!-- Mobile Dynamic Island Glass Dropdown -->
@@ -321,7 +319,7 @@ onUnmounted(() => {
   pointer-events: auto;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 0.5rem;
   padding: 5px 6px;
   background: rgba(5, 42, 53, 0.92);
   backdrop-filter: blur(20px) saturate(180%);
@@ -334,6 +332,12 @@ onUnmounted(() => {
     inset 0 1px 0 rgba(143, 233, 255, 0.15);
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   max-width: 100%;
+}
+
+@media (min-width: 860px) {
+  .floating-navbar {
+    gap: 1.25rem;
+  }
 }
 
 .floating-navbar.is-scrolled {
@@ -416,29 +420,26 @@ onUnmounted(() => {
   font-weight: 600;
 }
 
-/* Right Action CTA Button (Butter Pill) */
-.header-right-action {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
+/* Butter Pill CTA Button */
 .pill-cta-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  height: 40px;
+  line-height: 1;
   background: var(--color-butter);
   color: var(--color-ink);
   border-radius: 9999px;
   font-family: var(--font-sans);
   font-size: 0.85rem;
   font-weight: 700;
-  padding: 0.5rem 1.25rem;
+  padding: 0 1.25rem;
   text-decoration: none;
   white-space: nowrap;
   letter-spacing: -0.01em;
   transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
   box-shadow: 0 2px 10px rgba(255, 216, 64, 0.35);
+  flex-shrink: 0;
 }
 
 .pill-cta-btn:hover {
@@ -459,14 +460,15 @@ onUnmounted(() => {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 @media (min-width: 860px) {
