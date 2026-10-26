@@ -294,7 +294,7 @@
 
 /* Paper Card - Horizontal with Description First */
 .paper-card {
-  border-left: 2px solid rgba(11, 14, 20, 0.12);
+  border-left: 2px solid #D2C4AC;
   padding-left: 1.5rem;
   display: flex;
   flex-direction: column-reverse;
@@ -302,12 +302,13 @@
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-@media (min-width: 580px) {
+@media (min-width: 600px) {
   .paper-card {
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 1.75rem;
+    padding-left: 1.75rem;
   }
 }
 
@@ -327,24 +328,27 @@
   width: 100%;
   aspect-ratio: 16/10;
   overflow: hidden;
-  border-radius: var(--radius-tile);
+  border-radius: 20px;
   background: #e9ecef;
   flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
-@media (min-width: 580px) {
+@media (min-width: 600px) {
   .paper-card-img-wrap {
-    width: 180px;
+    width: 44%;
+    max-width: 280px;
+    min-width: 210px;
+    aspect-ratio: 1.3 / 1;
     height: auto;
-    min-height: 180px;
-    aspect-ratio: auto;
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .paper-card-img-wrap {
-    width: 210px;
-    min-height: 200px;
+    width: 45%;
+    max-width: 290px;
+    aspect-ratio: 1.3 / 1;
   }
 }
 
@@ -352,6 +356,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 20px;
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -360,44 +365,54 @@
 }
 
 .paper-card-num {
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  color: rgba(11, 14, 20, 0.4);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: #8C9CA5;
   display: block;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
 }
 
 .paper-card-title {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--color-paper-foreground);
-  margin-bottom: 0.55rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
   line-height: 1.25;
 }
 
 .paper-card-desc {
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--color-paper-muted);
-  margin-bottom: 1rem;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: #475569;
+  margin-bottom: 1.35rem;
 }
 
 .paper-card-features {
   list-style: none;
-  font-size: 0.72rem;
-  line-height: 1.45;
-  color: rgba(11, 14, 20, 0.75);
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: #1e293b;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
-  padding-top: 0.75rem;
-  border-top: 1px dashed rgba(11, 14, 20, 0.15);
+  gap: 0.45rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed rgba(11, 14, 20, 0.16);
   margin-top: auto;
 }
 
+.paper-card-features li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
 .paper-card-features li::before {
-  content: "→ ";
-  color: var(--color-primary-foreground);
-  font-weight: bold;
+  content: "→";
+  color: #0f172a;
+  font-weight: 700;
+  flex-shrink: 0;
 }
 </style>

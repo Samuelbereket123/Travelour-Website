@@ -270,14 +270,13 @@ img, video {
    Always use this dark teal tone (#053949) for readability.
    ========================================================================== */
 
-.bg-sail,
-.hero-sail {
+/* Pure Sail Gradient Banner (for non-hero sections) */
+.bg-sail {
   background: var(--gradient-sail);
   color: var(--color-on-sail);
   position: relative;
 }
 
-/* Enforce dark teal text for all typography on Sail Gradient */
 .bg-sail h1,
 .bg-sail h2,
 .bg-sail h3,
@@ -286,45 +285,20 @@ img, video {
 .bg-sail h6,
 .bg-sail p,
 .bg-sail li,
-.bg-sail label,
-.hero-sail h1,
-.hero-sail h2,
-.hero-sail h3,
-.hero-sail h4,
-.hero-sail h5,
-.hero-sail h6,
-.hero-sail p,
-.hero-sail li,
-.hero-sail label {
+.bg-sail label {
   color: var(--color-on-sail);
 }
 
-.text-on-sail {
-  color: var(--color-on-sail) !important;
-}
-
-.text-ink {
-  color: var(--color-ink) !important;
-}
-
-.text-butter {
-  color: var(--color-butter) !important;
-}
-
-.bg-sail .eyebrow,
-.hero-sail .eyebrow {
+.bg-sail .eyebrow {
   color: var(--color-on-sail);
   font-weight: 700;
 }
 
-.bg-sail .eyebrow::before,
-.hero-sail .eyebrow::before {
+.bg-sail .eyebrow::before {
   background-color: var(--color-on-sail);
 }
 
-/* Primary CTA on Sail Gradient uses Butter */
-.bg-sail .btn-primary,
-.hero-sail .btn-primary {
+.bg-sail .btn-primary {
   background-color: var(--color-butter);
   color: var(--color-ink);
   font-weight: 700;
@@ -332,17 +306,14 @@ img, video {
   border: 1px solid rgba(5, 57, 73, 0.12);
 }
 
-.bg-sail .btn-primary:hover,
-.hero-sail .btn-primary:hover {
+.bg-sail .btn-primary:hover {
   background-color: var(--color-butter-hover);
   color: var(--color-ink);
   box-shadow: 0 6px 26px rgba(5, 57, 73, 0.35);
   transform: translateY(-2px);
 }
 
-/* Secondary CTA on Sail Gradient */
 .bg-sail .btn-secondary,
-.hero-sail .btn-secondary,
 .btn-sail-secondary {
   background: rgba(5, 57, 73, 0.08);
   color: var(--color-on-sail);
@@ -367,12 +338,145 @@ img, video {
 }
 
 .bg-sail .btn-secondary:hover,
-.hero-sail .btn-secondary:hover,
 .btn-sail-secondary:hover {
   background: var(--color-on-sail);
   color: var(--color-sail-light);
   border-color: var(--color-on-sail);
   transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   HERO SECTIONS PHOTO BACKGROUND (Dubai Skyline with Dark Vignette)
+   Matches HeroSection.vue visual language across all sub-pages
+   ========================================================================== */
+.hero-sail {
+  position: relative;
+  background-color: var(--color-background);
+  color: #ffffff;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(143, 233, 255, 0.16);
+}
+
+/* Background photo layer */
+.hero-sail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/pexels-maria-charizani-3542905-5577693.jpg');
+  background-size: cover;
+  background-position: center 32%;
+  filter: brightness(0.92) contrast(1.06);
+  transform: scale(1.02);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Multi-gradient scrim for editorial readability and bottom fade */
+.hero-sail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(4, 32, 40, 0.72) 0%, rgba(4, 32, 40, 0.2) 22%),
+    linear-gradient(90deg, rgba(2, 18, 24, 0.94) 0%, rgba(2, 18, 24, 0.82) 42%, rgba(2, 18, 24, 0.5) 70%, rgba(2, 18, 24, 0.22) 100%),
+    linear-gradient(0deg, var(--color-background) 0%, rgba(5, 42, 53, 0.85) 15%, transparent 38%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hero-sail::after {
+    background:
+      linear-gradient(180deg, rgba(4, 32, 40, 0.85) 0%, rgba(4, 32, 40, 0.5) 25%),
+      linear-gradient(180deg, rgba(2, 18, 24, 0.88) 0%, rgba(2, 18, 24, 0.75) 60%, var(--color-background) 100%);
+  }
+}
+
+/* Elevate shell content above photo scrim */
+.hero-sail > * {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-sail h1,
+.hero-sail h2,
+.hero-sail h3,
+.hero-sail h4,
+.hero-sail h5,
+.hero-sail h6 {
+  color: #ffffff;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.hero-sail p,
+.hero-sail li,
+.hero-sail label {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-sail .eyebrow {
+  color: var(--color-sail-light);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-sail .eyebrow::before {
+  background-color: var(--color-butter);
+  box-shadow: 0 0 10px rgba(255, 216, 64, 0.6);
+}
+
+.hero-sail [class*="-accent"],
+.hero-sail [class*="_accent"],
+.hero-sail .hero-title-accent,
+.hero-sail .biz-hero-title-accent,
+.hero-sail .talent-hero-title-accent,
+.hero-sail .solutions-title-accent,
+.hero-sail .about-title-accent,
+.hero-sail .contact-title-accent,
+.hero-sail .download-title-accent {
+  color: var(--color-butter) !important;
+  font-weight: 700;
+  text-shadow: 0 4px 30px rgba(255, 216, 64, 0.35);
+}
+
+.hero-sail .btn-primary {
+  background-color: var(--color-butter);
+  color: var(--color-ink);
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(255, 216, 64, 0.35);
+  border: 1px solid var(--color-butter-hover);
+}
+
+.hero-sail .btn-primary:hover {
+  background-color: var(--color-butter-hover);
+  color: var(--color-ink);
+  box-shadow: 0 6px 28px rgba(255, 216, 64, 0.55);
+  transform: translateY(-2px);
+}
+
+.hero-sail .btn-secondary,
+.hero-sail .btn-sail-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hero-sail .btn-secondary:hover,
+.hero-sail .btn-sail-secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
 }
 
 .bg-sail .btn-link-gold,

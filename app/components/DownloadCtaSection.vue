@@ -1,14 +1,15 @@
 <template>
-  <section id="download-cta" class="download-cta-section bg-sail">
-    <!-- Background Image with Ambient Sail Overlay -->
-    <div class="cta-bg-wrapper">
+  <section id="download-cta" class="download-cta-section">
+    <!-- Night Dubai Skyline Background Layer -->
+    <div class="cta-bg-wrapper" aria-hidden="true">
       <img
-        src="/images/travelour_app_showcase.jpg"
-        alt="Travelour Dubai App Interface"
+        src="/images/pexels-maria-charizani-3542905-5577693.jpg"
+        alt="Dubai Downtown skyline at night featuring Burj Khalifa"
         class="cta-bg-image"
         loading="lazy"
       />
-      <div class="cta-sail-tint" aria-hidden="true"></div>
+      <!-- Multi-gradient scrim for editorial readability and smooth transitions -->
+      <div class="cta-bg-overlay"></div>
     </div>
 
     <!-- Centered Content -->
@@ -18,8 +19,8 @@
       </p>
 
       <h2 class="cta-title font-display">
-        One app. Zero guesswork.<br />
-        <span class="cta-title-bold">Welcome to Dubai.</span>
+        <span class="cta-title-line">One app. Zero guesswork.</span>
+        <span class="cta-title-accent">Welcome to Dubai.</span>
       </h2>
 
       <p class="cta-subtitle font-sans">
@@ -29,17 +30,17 @@
       <div class="cta-buttons-row">
         <NuxtLink to="/download" class="btn btn-primary cta-primary-btn">
           <span>Get the App</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
         </NuxtLink>
 
-        <NuxtLink to="/business" class="btn-sail-secondary cta-secondary-btn">
+        <NuxtLink to="/business" class="cta-secondary-btn">
           <span>Join Directory</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </NuxtLink>
       </div>
@@ -77,16 +78,19 @@
   overflow: hidden;
   text-align: center;
   padding-top: 8rem;
-  padding-bottom: 8rem;
-  background: var(--gradient-sail);
-  color: var(--color-on-sail);
+  padding-bottom: 8.5rem;
+  background-color: var(--color-background);
+  color: #ffffff;
+  border-top: 1px solid rgba(143, 233, 255, 0.16);
+  border-bottom: 1px solid rgba(143, 233, 255, 0.16);
 }
 
 /* Background Media & Overlays */
 .cta-bg-wrapper {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
+  overflow: hidden;
   pointer-events: none;
 }
 
@@ -94,15 +98,34 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  opacity: 0.08;
-  mix-blend-mode: multiply;
+  object-position: center 38%;
+  transform: scale(1.02);
+  filter: brightness(0.92) contrast(1.06);
 }
 
-.cta-sail-tint {
+.cta-bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(143, 233, 255, 0.25) 0%, rgba(18, 88, 110, 0.45) 100%);
+  background:
+    /* Top seamless fade from prior section */
+    linear-gradient(180deg, var(--color-background) 0%, rgba(4, 32, 40, 0.72) 18%, transparent 40%),
+    /* Bottom seamless fade into footer */
+    linear-gradient(0deg, #042028 0%, rgba(4, 32, 40, 0.75) 20%, transparent 44%),
+    /* Centered radial vignette ensuring crisp legibility and luxurious depth */
+    radial-gradient(ellipse 75% 70% at 50% 50%, rgba(2, 18, 24, 0.88) 0%, rgba(2, 18, 24, 0.72) 55%, rgba(2, 18, 24, 0.42) 100%);
+}
+
+@media (max-width: 768px) {
+  .download-cta-section {
+    padding-top: 5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .cta-bg-overlay {
+    background:
+      linear-gradient(180deg, var(--color-background) 0%, rgba(4, 32, 40, 0.85) 20%),
+      linear-gradient(180deg, rgba(2, 18, 24, 0.88) 0%, rgba(2, 18, 24, 0.78) 60%, #042028 100%);
+  }
 }
 
 /* Shell content */
@@ -115,37 +138,58 @@
 }
 
 .cta-eyebrow {
-  margin-bottom: 1.25rem;
-  color: var(--color-on-sail);
+  margin-bottom: 1.5rem;
+  color: var(--color-sail-light);
   font-weight: 700;
+  letter-spacing: 0.14em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .cta-eyebrow::before {
-  background-color: var(--color-on-sail);
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-butter);
+  box-shadow: 0 0 10px rgba(255, 216, 64, 0.6);
 }
 
 .cta-title {
-  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5.8vw, 4.8rem);
   font-weight: 300;
   line-height: 1.05;
-  color: var(--color-on-sail);
+  color: #ffffff;
   margin-bottom: 1.5rem;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
   max-width: 52rem;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
 }
 
-.cta-title-bold {
+.cta-title-line {
+  display: block;
+  color: #ffffff;
+}
+
+.cta-title-accent {
+  display: block;
   font-weight: 700;
-  color: var(--color-on-sail);
+  color: var(--color-butter);
+  text-shadow: 0 4px 30px rgba(255, 216, 64, 0.35);
 }
 
 .cta-subtitle {
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
-  line-height: 1.6;
-  color: var(--color-on-sail);
-  opacity: 0.92;
-  max-width: 42rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 44rem;
   margin-bottom: 2.75rem;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .cta-buttons-row {
@@ -158,36 +202,61 @@
 }
 
 .cta-primary-btn {
-  padding: 1rem 2.25rem;
-  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.05rem 2.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  text-transform: none;
+  letter-spacing: 0.01em;
   background-color: var(--color-butter);
   color: var(--color-ink);
   font-weight: 700;
-  box-shadow: 0 4px 18px rgba(5, 57, 73, 0.25);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 20px rgba(255, 216, 64, 0.35);
+  border: 1px solid var(--color-butter-hover);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-decoration: none;
 }
 
 .cta-primary-btn:hover {
   background-color: var(--color-butter-hover);
   color: var(--color-ink);
-  box-shadow: 0 6px 24px rgba(5, 57, 73, 0.35);
+  box-shadow: 0 6px 28px rgba(255, 216, 64, 0.55);
   transform: translateY(-2px);
 }
 
 .cta-secondary-btn {
-  padding: 1rem 2.25rem;
-  font-size: 0.82rem;
-  background: rgba(255, 255, 255, 0.35);
-  color: var(--color-on-sail);
-  border: 1.5px solid var(--color-on-sail);
-  box-shadow: 0 2px 10px rgba(5, 57, 73, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  padding: 1.05rem 2.2rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
 .cta-secondary-btn:hover {
-  background: var(--color-on-sail);
-  color: var(--color-sail-light);
-  border-color: var(--color-on-sail);
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(5, 57, 73, 0.25);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
 }
 
 /* Platform chips */
@@ -195,22 +264,31 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .platform-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 1rem;
+  gap: 0.55rem;
+  padding: 0.5rem 1.15rem;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(5, 57, 73, 0.2);
-  color: var(--color-on-sail);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
   font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.platform-chip:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 </style>

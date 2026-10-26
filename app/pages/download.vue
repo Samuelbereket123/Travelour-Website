@@ -122,7 +122,7 @@ const showToast = (msg: string) => {
 .download-hero {
   padding-top: 5rem;
   padding-bottom: 6rem;
-  border-bottom: 1px solid rgba(5, 57, 73, 0.2);
+  border-bottom: 1px solid rgba(143, 233, 255, 0.16);
 }
 
 .download-shell {
@@ -136,25 +136,27 @@ const showToast = (msg: string) => {
   font-size: clamp(2.5rem, 6vw, 4.6rem);
   font-weight: 300;
   line-height: 1.05;
-  color: var(--color-on-sail);
+  color: #ffffff;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
   max-width: 50rem;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .download-title-accent {
   font-weight: 700;
-  color: var(--color-on-sail);
+  color: var(--color-butter);
+  text-shadow: 0 4px 30px rgba(255, 216, 64, 0.35);
 }
 
 .download-subtitle {
   font-size: 1.15rem;
   line-height: 1.65;
-  color: var(--color-on-sail);
-  opacity: 0.92;
+  color: rgba(255, 255, 255, 0.9);
   max-width: 44rem;
   margin-bottom: 3.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .download-platforms-grid {

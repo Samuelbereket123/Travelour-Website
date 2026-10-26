@@ -22,7 +22,7 @@
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
           </NuxtLink>
-          <span class="font-sans text-on-sail text-xs font-semibold">$29.00 / 12-MONTH LISTING</span>
+          <span class="font-sans talent-price-badge text-xs font-semibold">$29.00 / 12-MONTH LISTING</span>
         </div>
       </div>
     </section>
@@ -92,37 +92,44 @@ useHead({
 .talent-hero {
   padding-top: 4rem;
   padding-bottom: 4rem;
-  border-bottom: 1px solid rgba(5, 57, 73, 0.2);
+  border-bottom: 1px solid rgba(143, 233, 255, 0.16);
 }
 
 .talent-hero-title {
   font-size: clamp(2.5rem, 5.5vw, 4.4rem);
   font-weight: 300;
   line-height: 1.1;
-  color: var(--color-on-sail);
+  color: #ffffff;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .talent-hero-title-accent {
   font-weight: 700;
-  color: var(--color-on-sail);
+  color: var(--color-butter);
+  text-shadow: 0 4px 30px rgba(255, 216, 64, 0.35);
 }
 
 .talent-hero-subtitle {
   font-size: 1.15rem;
   line-height: 1.65;
-  color: var(--color-on-sail);
-  opacity: 0.92;
+  color: rgba(255, 255, 255, 0.9);
   max-width: 48rem;
   margin-bottom: 2.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .talent-cta-row {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+.talent-price-badge {
+  color: var(--color-sail-light);
+  letter-spacing: 0.08em;
 }
 
 .talent-grid {
